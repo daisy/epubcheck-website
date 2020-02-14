@@ -42,3 +42,6 @@ npm run build
 wait
 rm -rf serve
 cp -R _site serve
+
+# reset to 0.1.0
+cp test/versions-1.json src/_data/versions.json
