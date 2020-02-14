@@ -1,0 +1,24 @@
+{
+    "layout": "documentation.njk",
+    "sectionTitle": "User Guide",
+    "sectionUrl": "/docs/user",
+    "nav": [
+        {
+            "url": "/docs/user",
+            "label": "Introduction"
+        },
+        {
+            "url": "/docs/user/cli",
+            "label": "Command Line"
+        },
+        {
+            "url": "/docs/user/messages",
+            "label": "Messages"
+        },
+        {
+            "url": "/docs/user/java-library",
+            "label": "Java Library"
+        }
+    ],
+    "tags": ["docs"]
+}

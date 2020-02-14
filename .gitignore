@@ -1,0 +1,6 @@
+_site
+serve
+node_modules
+.vscode
+.eleventyignore.bak
+

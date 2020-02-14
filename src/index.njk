@@ -1,0 +1,39 @@
+---
+title: Home
+date: Last Modified
+---
+{%- extends 'base.njk' -%}
+{%- set landing = true -%}
+{%- block content -%}
+<main class="landing">
+    <div class="desc">
+        <h1>What is it?</h1>
+
+        <p>EPUBCheck is a tool to validate the conformance of EPUB publications against the EPUB specifications. EPUBCheck can be run as a standalone command-line tool or used as a Java library.</p>
+    </div>
+
+
+    <div class="download">
+        <h1>Download</h1>
+        <a id="download" href="{{ githubRelease.latest.url }}">
+        Latest version ({{ githubRelease.latest.version }})
+        <span class="deemphasize">{{ githubRelease.latest.date }}</span>
+        </a>
+
+        <p><a href="https://github.com/w3c/epubcheck/releases">View all releases</a></p>
+    </div>
+
+
+    <div class="usage">
+        <h1>Basic usage</h1>
+
+        <p>EPUBCheck is a command line tool. Unzip the file you downloaded and open a terminal program.</p>
+
+        <p><em>Example</em>:</p>
+
+        <pre><code>$ java -jar epubcheck.jar moby_dick.epub</code></pre>
+
+        <p>Read more about the <a href="/docs/user/cli">command line interface</a>.</p>
+    </div>
+</main>
+{%- endblock -%}

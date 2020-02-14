@@ -1,0 +1,50 @@
+---
+layout: base.njk
+title: Documentation
+tags: 
+    - docs
+---
+{%- block content -%}
+
+<ul class="large">
+    <li><a href="{{ 'user' | url }}">User guide</a></li>
+    <li><a href="{{ 'dev' | url }}">Developer guide</a></li>
+</ul>
+
+<div id="versions">
+</div>
+
+<script type="module" src="{{ '/versions.js' | addSiteRootPath }}"></script>
+<script type="module" src="{{ '/site.js' | addSiteRootPath }}"></script>
+<script type="module">
+    import { getLatest, getReleases } from '{{ '/versions.js' | addSiteRootPath }}';
+    import { getSitePath, getDocsPath } from '{{ '/site.js' | addSiteRootPath }}';
+    document.addEventListener("DOMContentLoaded", e => {
+        let versionsDiv = document.querySelector("#versions");
+        let latest = getLatest();
+        let releases = getReleases();
+        let thisVersion = "{{ env.DOCSSITE_VERSION }}";
+        if (releases.length > 1) {
+            versionsDiv.innerHTML = `
+            <h2>Other Versions</h2>
+            <ul>
+            ${releases.map(release => {
+                let href = getDocsPath(release);
+                return release !== latest ? 
+                    `<li>
+                        <a href="${href}">${release}</a>
+                        ${release === thisVersion ? 
+                            `<span style="font-style: italic">&nbsp;(This)</span>` 
+                            : ``
+                        }
+                    </li>
+                    ` : '';                
+                }).join('')
+            }
+            </ul>`;
+        }
+    });
+</script>
+
+
+{%- endblock -%}

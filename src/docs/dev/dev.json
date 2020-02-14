@@ -1,0 +1,36 @@
+{
+    "layout": "documentation.njk",
+    "sectionTitle": "Developer Guide",
+    "sectionUrl": "/docs/dev",
+    "nav": [
+        {
+            "url": "/docs/dev",
+            "label": "Introduction"
+        },
+        {
+            "url": "/docs/dev/issues",
+            "label": "Issue tracker" 
+        },
+        {
+            "url": "/docs/dev/commits",
+            "label": "Writing commits" 
+        },
+        {
+            "url": "/docs/dev/build",
+            "label": "Build and test" 
+        },
+        {
+            "url": "/docs/dev/releases",
+            "label": "Releases" 
+        },
+        {
+            "url": "/docs/dev/testsuite",
+            "label": "Test Suite" 
+        },
+        {
+            "url": "/docs/dev/codebase",
+            "label": "Codebase" 
+        }
+    ],
+    "tags": ["docs"]
+}

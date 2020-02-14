@@ -1,0 +1,37 @@
+{
+    "name": "epubcheck-website",
+    "version": "1.0.0",
+    "description": "EPUBCheck website",
+    "scripts": {
+        "build": "./node_modules/.bin/cross-env DOCSSITE_VERSION=$TRAVIS_TAG ./node_modules/.bin/eleventy && ./node_modules/.bin/cross-env DOCSSITE_WRITE_VERSION=true ./node_modules/.bin/cross-env DOCSSITE_VERSION=$TRAVIS_TAG ./node_modules/.bin/eleventy",
+        "serve": "./node_modules/.bin/eleventy --watch --serve",
+        "postbuild": "./node_modules/.bin/cross-env DOCSSITE_VERSION=$TRAVIS_TAG ./node_modules/.bin/cross-env DOCSSITE_WRITE_VERSION=true node postbuild.js && ./node_modules/.bin/gulp",
+        "stylelint": "./node_modules/.bin/gulp css"
+    },
+    "repository": {
+        "type": "git",
+        "url": "TODO"
+    },
+    "author": "",
+    "license": "ISC",
+    "dependencies": {
+        "@11ty/eleventy": "^0.10.0",
+        "axios": "^0.19.2",
+        "cross-env": "^7.0.0",
+        "fs-extra": "^8.1.0",
+        "gulp": "^4.0.2",
+        "gulp-pretty-html": "^2.0.10",
+        "gulp-stylelint": "^13.0.0",
+        "markdown-it": "^10.0.0",
+        "markdown-it-anchor": "^5.2.5",
+        "markdown-it-imsize": "^2.0.1",
+        "moment": "^2.24.0",
+        "rimraf": "^3.0.1",
+        "semver": "^7.1.2",
+        "nunjucks": "^3.2.0",
+        "stylelint": "^13.0.0",
+        "stylelint-config-recommended": "^3.0.0",
+        "unzipper": "^0.10.8",
+        "zip-a-folder": "0.0.11"
+    }
+}
