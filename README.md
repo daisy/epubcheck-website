@@ -11,23 +11,30 @@
 
 This is an [11ty](http://www.11ty.io/) project. 
 
-* Build with `$ npm run build`
-* Serve the files locally with `$ npm run serve`. Browse to [localhost:8080](http://localhost:8080).
-* Pretty-format the HTML and CSS output with `$ gulp`
+* Build with `npm run build`
+* Serve the files locally with `npm run serve`. Browse to [localhost:8080](http://localhost:8080).
+* Pretty-format the HTML and CSS output with `gulp`
 
 Source files are in `src`. They are typically in `markdown` or [`nunjucks`](https://mozilla.github.io/nunjucks/) format.
 
 Documentation files are in `src/docs`. The indices for documentation sections live in the corresponding `json` file, e.g. `dev.json` or `user.json`. Each documentation page must have the tag `docs` (added automatically for the `dev` and `user` folders; you need to add it yourself if you add another folder).
 
+Versioning is tracked in `versions.json`. Add every new version here manually. 
+
 ## Features
 
-#### Versioned documentation
+### Versioned documentation
 
 This site will automatically grab old versions of itself and make those versions available under the "Documentation" page. 
 
 A user browsing an older version gets a warning that they are not looking at the most current version.
 
-### About the build process
+
+### EPUBCheck code parsing
+
+TBD
+
+## About the build process
 
 When you run `npm run build`, it builds the site twice: once to `_site`, and once to `_site/version/xxx`. 
 
@@ -39,7 +46,11 @@ Also during `postbuild`, previous zipped versions of the site are downloaded fro
 
 The zipped archives are also served up under `_site/history`, along with the current version's zip, because future builds of the site will need them.
 
-### Settings
+## Continuous integration
+
+With Travis: either set `TRAVIS_TAG` manually to be the version number, or use a GitHub tagged release to set it automatically.
+
+## Settings
 
 #### Environment variables
 
