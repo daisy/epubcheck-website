@@ -3,4 +3,4 @@ serve
 node_modules
 .vscode
 .eleventyignore.bak
-
+.cache
