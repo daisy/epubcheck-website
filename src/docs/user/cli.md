@@ -8,13 +8,41 @@ There's no native GUI – however, there are some third-party apps offering a GU
 
 ## System prerequisites
 
-To run the tool you need Java *(1.6 or above, 1.7+ recommended)*. Any Operating System should do.
+To run the tool you need Java runtime. Any Operating System should do.
+
+To check if Java is correctly installed you can use the command (from command line interface, *Terminal* or *Command Prompt*):
+
+`java --version`
+
+If Java is correctly installed the command will return the version of Java Runtime installed, otherwise you have to install Java JRE.
+
+To install Java Runtime Enviroment you have to options:
+
+- [Oracle JRE 1.7, 1.8, 9 or 10+](https://www.java.com/en/download/mac_download.jsp)
+- [Open JDK 11+](https://jdk.java.net/)
 
 **Note on Java:**
 > You need at least JRE or JDK 1.6 to run EPUBCheck on the commandline. However, starting with EPUBCheck 4.0 we *recommend* Java 1.7 or 1.8 to be able to run advanced image checks (Java 1.6 doesn't support those).
 
 **Note on Java on Mac OS X:**
-> Due to the change in ownership of the Apple Java version from Apple to Oracle, Java 1.6 (Apple) and Java 1.7+ (Oracle) are kind of incompatible to each other. To run EPUBCheck with advanced image checks in a Mac OS X Terminal, the [Oracle JDK 1.7, 1.8, 9 or 10](http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html) or [Open JDK 11+](https://jdk.java.net/11/) is required!
+> Due to the change in ownership of the Apple Java version from Apple to Oracle, Java 1.6 (Apple) and Java 1.7+ (Oracle) are kind of incompatible to each other. To run EPUBCheck with advanced image checks in a Mac OS X Terminal, the [Oracle JRE 1.7, 1.8, 9 or 10](https://www.java.com/en/download/mac_download.jsp) or [Open JDK 11+](https://jdk.java.net/) is required!
+
+## Installation
+
+EPUBcheck is not a standalone software to install at OS level, but it is a *JAR* (*Java ARchive*) package which can be placed anywhere on your file system and must be launched from the command line, using the Java Runtime Enviroment.
+
+To use EPUBcheck from the command line you don't need to start a software installation procedure, just download the latest version from the project repository. The process step-by-step is:
+
+- Locate the latest version of EPUBcheck from the GitHub repository [https://github.com/w3c/epubcheck/releases](https://github.com/w3c/epubcheck/releases) (it's the first one at the top).
+- From the **Assets** section download the zip file containing EPUBcheck (the name varies depending on the version with the *epubcheck-x.y.z.zip* pattern)
+- Unzip the downloaded zip file
+- From the command line go to the unpacked folder with the command `cd /path/to/epubcheck-x.y.z/`
+- Launch the command `java -jar epubcheck.jar --version`
+- If everything goes correctly the command will return the EPUBcheck vesion
+
+**Note:**
+> EPUBcheck is not a software to install: the unpacked folder can be moved freely in your file system.
+Be careful to **always keep together** all the contents of the folder, especially the `epubcheck.jar` file and the `lib/` directory.
 
 ## Running from the command line
 
