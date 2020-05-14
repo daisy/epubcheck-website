@@ -16,7 +16,7 @@ To check if Java is correctly installed you can use the command (from command li
 
 If Java is correctly installed the command will return the version of Java Runtime installed, otherwise you have to install Java JRE.
 
-To install Java Runtime Enviroment you have to options:
+To install Java Runtime Enviroment you have two options:
 
 - [Oracle JRE 1.7, 1.8, 9 or 10+](https://www.java.com/en/download/mac_download.jsp)
 - [Open JDK 11+](https://jdk.java.net/)
@@ -25,7 +25,7 @@ To install Java Runtime Enviroment you have to options:
 > You need at least JRE or JDK 1.6 to run EPUBCheck on the commandline. However, starting with EPUBCheck 4.0 we *recommend* Java 1.7 or 1.8 to be able to run advanced image checks (Java 1.6 doesn't support those).
 
 **Note on Java on Mac OS X:**
-> Due to the change in ownership of the Apple Java version from Apple to Oracle, Java 1.6 (Apple) and Java 1.7+ (Oracle) are kind of incompatible to each other. To run EPUBCheck with advanced image checks in a Mac OS X Terminal, the [Oracle JRE 1.7, 1.8, 9 or 10](https://www.java.com/en/download/mac_download.jsp) or [Open JDK 11+](https://jdk.java.net/) is required!
+> Due to the change in ownership of the Apple Java version from Apple to Oracle, Java 1.6 (Apple) and Java 1.7+ (Oracle) are kind of incompatible to each other. To run EPUBCheck with advanced image checks in a Mac OS X Terminal, the [Oracle JRE 1.7, 1.8, 9 or 10+](https://www.java.com/en/download/mac_download.jsp) or [Open JDK 11+](https://jdk.java.net/) is required!
 
 ## Installation
 
@@ -38,7 +38,7 @@ To use EPUBcheck from the command line you don't need to start a software instal
 - Unzip the downloaded zip file
 - From the command line go to the unpacked folder with the command `cd /path/to/epubcheck-x.y.z/`
 - Launch the command `java -jar epubcheck.jar --version`
-- If everything goes correctly the command will return the EPUBcheck vesion
+- If everything goes correctly the command will return the EPUBcheck version
 
 **Note:**
 > EPUBcheck is not a software to install: the unpacked folder can be moved freely in your file system.
