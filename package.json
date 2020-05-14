@@ -16,6 +16,7 @@
     "license": "ISC",
     "dependencies": {
         "@11ty/eleventy": "^0.10.0",
+        "@11ty/eleventy-cache-assets": "^2.0.2",
         "axios": "^0.19.2",
         "cross-env": "^7.0.0",
         "fs-extra": "^8.1.0",
@@ -26,9 +27,9 @@
         "markdown-it-anchor": "^5.2.5",
         "markdown-it-imsize": "^2.0.1",
         "moment": "^2.24.0",
+        "nunjucks": "^3.2.0",
         "rimraf": "^3.0.1",
         "semver": "^7.1.2",
-        "nunjucks": "^3.2.0",
         "stylelint": "^13.0.0",
         "stylelint-config-recommended": "^3.0.0",
         "unzipper": "^0.10.8",
