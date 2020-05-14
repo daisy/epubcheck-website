@@ -4,3 +4,5 @@ node_modules
 .vscode
 .eleventyignore.bak
 
+
+.DS_Store
