@@ -6,6 +6,8 @@ const fs = require('fs-extra');
 const site = JSON.parse(fs.readFileSync("src/_data/site.json"));
 const versions = JSON.parse(fs.readFileSync("src/_data/versions.json"));
 const semverCompare = require('semver/functions/compare');
+const uslug = require('uslug')
+const uslugify = s => uslug(s)
 
 module.exports = function (eleventyConfig) {
     // restore the backup in case we overwrote it the last time we built the site
@@ -109,9 +111,11 @@ module.exports = function (eleventyConfig) {
         linkify: true
     };
     let opts = {
-        // permalink: true,
-        // permalinkClass: "direct-link",
-        // permalinkSymbol: "#"
+        permalink: true,
+        permalinkClass: "direct-link",
+        permalinkSymbol: "§",
+        permalinkBefore: true,
+        slugify: uslugify
     };
 
     eleventyConfig.setLibrary("md", markdownIt(options)

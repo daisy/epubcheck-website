@@ -8,6 +8,10 @@
             "label": "Introduction"
         },
         {
+            "url": "/docs/user/getting-started",
+            "label": "Getting Started"
+        },
+        {
             "url": "/docs/user/cli",
             "label": "Command Line"
         },

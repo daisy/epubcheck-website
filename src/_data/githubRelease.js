@@ -1,16 +1,18 @@
-const axios = require('axios');
 const moment = require('moment');
-const fs = require('fs');
-const path = require('path');
+const Cache = require("@11ty/eleventy-cache-assets");
 
 // get the latest release from github
 async function getLatestRelease() {
     try {
-        let release = await axios.get('https://api.github.com/repos/w3c/epubcheck/releases/latest');
+        let release = await Cache("https://api.github.com/repos/w3c/epubcheck/releases/latest", {
+            duration: "1m", 
+            type: "json"
+        });
+
         return {
-            url: release.data.assets[0].browser_download_url,
-            version: release.data.tag_name,
-            date: moment(release.data.published_at).format('YYYY-MM-DD')
+            url: release.assets[0].browser_download_url,
+            version: release.tag_name,
+            date: moment(release.published_at).format('YYYY-MM-DD')
         };
     }
     catch (err) {
