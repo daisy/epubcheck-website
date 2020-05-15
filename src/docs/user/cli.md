@@ -33,10 +33,9 @@ EPUBcheck is not a standalone software to install at OS level, but it is a *JAR*
 
 To use EPUBcheck from the command line you don't need to start a software installation procedure, just download the latest version from the project repository. The process step-by-step is:
 
-- Locate the latest version of EPUBcheck from the GitHub repository [https://github.com/w3c/epubcheck/releases](https://github.com/w3c/epubcheck/releases) (it's the first one at the top).
-- From the **Assets** section download the zip file containing EPUBcheck (the name varies depending on the version with the *epubcheck-x.y.z.zip* pattern)
+- Download the [latest version of EPUBcheck](https://daisy.github.io/epubcheck-website/download-latest/)
 - Unzip the downloaded zip file
-- From the command line go to the unpacked folder with the command `cd /path/to/epubcheck-x.y.z/`
+- From the command line go to the unpacked folder with the command `cd /path/to/epubcheck-x.y.z/` (the directory name varies depending on the version, based on *epubcheck-x.y.z* pattern)
 - Launch the command `java -jar epubcheck.jar --version`
 - If everything goes correctly the command will return the EPUBcheck version
 
