@@ -58,14 +58,14 @@ a:link, a:visited, a:hover {
 a:visited {
     color: var(--blue);
 }
-/* anchors before headers */
-a.direct-link:visited {
-    color: inherit;
-}
+/* .direct-link: anchors before headers */
 a.direct-link {
     color: var(--black);
     opacity: 0.5;
     font-size: smaller;    
+}
+a.direct-link:visited {
+    color: inherit;
 }
 a.direct-link:hover{
     border-bottom: none;
