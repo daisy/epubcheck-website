@@ -43,6 +43,13 @@ To use EPUBcheck from the command line you don't need to start a software instal
 > EPUBcheck is not a software to install: the unpacked folder can be moved freely in your file system.
 Be careful to **always keep together** all the contents of the folder, especially the `epubcheck.jar` file and the `lib/` directory.
 
+### Update
+
+Since the software is not installed at OS level, to update EPUBcheck to the latest version, simply [download it](https://daisy.github.io/epubcheck-website/download-latest/) (you can follow the [installation](#installation) steps if you don't know how to do it).
+
+Once downloaded, just replace the old EPUBcheck directory with the new one.
+
+
 ## Running from the command line
 
 ### Overview of command line arguments
