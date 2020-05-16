@@ -120,6 +120,10 @@ No file specified in the arguments. Exiting.
 epubcheck completed
 ```
 
+## Usage guide
+
+Here are some examples of typical use cases of EPUBcheck, to know all the possibilities offered by the tool refer to [overview of command line arguments](#overview-of-command-line-arguments).
+
 ### Validating a packaged EPUB
 
 ```
@@ -128,7 +132,7 @@ java -jar epubcheck.jar file.epub
 
 ### Specifying a validation profile
 
-It is possible to specify a validation profile to validate an EPUB (or single file thereof) against a specific IDPF specification.
+It is possible to specify a validation profile to validate an EPUB (or single file thereof) against a specific EPUB specification.
 
 ```
 java -jar epubcheck.jar file.epub -profile PROFILE
@@ -142,9 +146,12 @@ Current profiles include:
 * **`idx`**: validates against the [EPUB Indexes](http://www.idpf.org/epub/idx/epub-indexes.html) specification
 * **`preview`**: validates against the [EPUB Previews](http://www.idpf.org/epub/previews/) specification
 
-Note: In most cases, it is not required to specify the validation profile explicitly, as it will automatically be set according to `dc:type` metadata in the Publication. Setting the profile explicitly can be useful to detect when such `dc:type` metadata is missing, or to validate single files (see next section).
+**Note:**
+> In most cases, it is not required to specify the validation profile explicitly, as it will automatically be set according to `dc:type` metadata in the Publication. Setting the profile explicitly can be useful to detect when such `dc:type` metadata is missing, or to validate single files (see next section).
 
 ### Validating a single file
+
+In addition to validating complete EPUB packages (compressed or expanded) you can validate individual files contained in an EPUB.
 
 ```
 java -jar epubcheck.jar singleFile -mode MODE -v VERSION -profile PROFILE
@@ -159,12 +166,13 @@ java -jar epubcheck.jar singleFile -mode MODE -v VERSION -profile PROFILE
   * _**`exp`** for Expanded EPUB validation (see the next section)_
 
  * **VERSION** must be one of
-  * `2.0`
-  * `3.0`
+  * `2.0` for EPUB 2
+  * `3.0` for EPUB 3
 
  * **PROFILE** is optional (see the previous section).
 
-_Note that when validating a single file, only a subset of the available tests is run. Also, when validating a full EPUB, both mode and version are ignored._
+**Note:**
+> When validating a single file, only a subset of the available tests is run. Also, when validating a full EPUB, both mode and version are ignored._
 
 ### Validating an "expanded" (i.e. unzipped) EPUB
 
@@ -174,11 +182,29 @@ java -jar epubcheck.jar folder/ -mode exp [-save]
 
 When using expanded mode, there's an optional flag `-save` to save the created archive upon validation.
 
-### Additional flags
+### Getting validation output in a structured format
 
- * `-out file.xml` outputs an assessment XML document
- * `-quiet` or `-q` outputs only if there is any warning or error
- * `-help`, `--help` or `-?` displays a help message
+By default the output of EPUBcheck validation is returned to the console in textual format, but you can get the result in a structured format, so it can be processed by other software.
+
+The available formats are:
+
+- XML: using argument `--out` (or `-o`)
+- XMP: using argument `--xmp` (or `-x`)
+- JSON: using argument `--json` (or `-j`)
+
+The output in the specified format can be saved in a file (specifying the path as argument value), or returned to the console (entering `-` as argument value).
+
+Example of saving the output in JSON format to file:
+
+```
+java -jar epubcheck.jar --json output.json file.epub
+```
+
+Example of output in XML format in the console:
+
+```
+java -jar epubcheck.jar --out - file.epub
+```
 
 ## Troubleshooting
 
