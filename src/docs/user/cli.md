@@ -12,7 +12,9 @@ To run the tool you need Java runtime. Any Operating System should do.
 
 To check if Java is correctly installed you can use the command (from command line interface, *Terminal* or *Command Prompt*):
 
-`java --version`
+```
+java --version
+```
 
 If Java is correctly installed the command will return the version of Java Runtime installed, otherwise you have to install Java JRE.
 
@@ -31,13 +33,28 @@ To install Java Runtime Enviroment you have two options:
 
 EPUBcheck is not a standalone software to install at OS level, but it is a *JAR* (*Java ARchive*) package which can be placed anywhere on your file system and must be launched from the command line, using the Java Runtime Enviroment.
 
-To use EPUBcheck from the command line you don't need to start a software installation procedure, just download the latest version from the project repository. The process step-by-step is:
+To use EPUBcheck from the command line you don't need to start a software installation procedure, just download the [latest version of EPUBcheck](https://daisy.github.io/epubcheck-website/download-latest/) from the project repository, unzip it and start playing with it.
+
+### Windows
+
+On Windows follow these steps:
 
 - Download the [latest version of EPUBcheck](https://daisy.github.io/epubcheck-website/download-latest/)
 - Unzip the downloaded zip file
 - From the command line go to the unpacked folder with the command `cd /path/to/epubcheck-x.y.z/` (the directory name varies depending on the version, based on *epubcheck-x.y.z* pattern)
 - Launch the command `java -jar epubcheck.jar --version`
 - If everything goes correctly the command will return the EPUBcheck version
+
+### MacOs and Linux
+
+On MacOs or Linux you can use this commands from Terminal to download EPUBcheck and run it in the current working directory:
+
+```
+curl -SL {{ githubRelease.latest.url }} | tar -xf -
+cd {{ githubRelease.latest.filename }}/
+java -jar epubcheck.jar --version
+```
+If everything goes correctly the command will return the EPUBcheck version.
 
 **Note:**
 > EPUBcheck is not a software to install: the unpacked folder can be moved freely in your file system.

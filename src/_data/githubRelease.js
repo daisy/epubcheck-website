@@ -1,4 +1,5 @@
 const moment = require('moment');
+const path = require('path');
 const Cache = require("@11ty/eleventy-cache-assets");
 
 // get the latest release from github
@@ -12,7 +13,9 @@ async function getLatestRelease() {
         return {
             url: release.assets[0].browser_download_url,
             version: release.tag_name,
-            date: moment(release.published_at).format('YYYY-MM-DD')
+            date: moment(release.published_at).format('YYYY-MM-DD'),
+            name: release.assets[0].name,
+            filename: path.basename(release.assets[0].name, '.zip')
         };
     }
     catch (err) {
