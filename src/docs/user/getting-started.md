@@ -29,8 +29,8 @@ EPUBcheck can be used both in stand-alone mode or integrated into more complex w
 
 Sometimes EPUBcheck messages can be a bit cryptic, that's why we made the [messages guide](../messages/) with the explanation of the meanings.
 
-If you still have doubts on difficult to understand messages you can ask for help through the available channels.
+If you still have doubts on difficult to understand messages you can [ask for help](../getting-help/) through the available channels.
 
 ## Get help on EPUBcheck
 
-If you have problems using EPUBcheck or understanding its messages, you can get help through the available channels.
+If you have problems using EPUBcheck or understanding its messages, you can [get help](../getting-help/) through the available channels.
