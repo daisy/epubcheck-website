@@ -12,12 +12,20 @@
             "label": "Getting Started"
         },
         {
+            "url": "/docs/user/installation",
+            "label": "Installation"
+        },
+        {
             "url": "/docs/user/cli",
             "label": "Command Line"
         },
         {
             "url": "/docs/user/messages",
             "label": "Messages"
+        },
+        {
+            "url": "/docs/user/third-party-tools",
+            "label": "Third Party Tools"
         },
         {
             "url": "/docs/user/java-library",
