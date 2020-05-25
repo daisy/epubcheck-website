@@ -8,7 +8,7 @@ _how issues are organized, how to branch, do PRs, etc_
 
 Fixing bugs is part of our job, but it's not always easy to find the problem correctly and quickly, so we ask for a little help in reporting it to us, in this way we can be faster in solving it.
 
-All reports are collected in the [Issue Tracker](https://github.com/daisy/epubcheck-website/issues) of the EPUBCheck repository on GitHub. To report a problem just add a [new issue](https://github.com/daisy/epubcheck-website/issues/new).
+All reports are collected in the [Issue Tracker](https://github.com/w3c/epubcheck/issues) of the EPUBCheck repository on GitHub. To report a problem just add a [new issue](https://github.com/w3c/epubcheck/issues/new).
 
 In order to be able to check and fix the bug as soon as possible, we need to be able to replicate it locally; for this we need to know the environment in which you are operating, in particular:
 
