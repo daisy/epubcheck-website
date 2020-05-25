@@ -21,7 +21,7 @@ EPUBcheck can validate the technical aspects of the file, but not its content: t
 
 ## How to use EPUBcheck
 
-EPUBcheck is a **command line interface tool** (*CLI*: *Terminal* or *Command Prompt*), to try it follow the [installation guide](../cli/#installation). If you are not such a nerd and prefer a graphical interface suitable for the millennium we live in, there are several tools that offer a [Graphical User Interface](../gui/) (*GUI*) to EPUBcheck.
+EPUBcheck is a **command line interface tool** (*CLI*: *Terminal* or *Command Prompt*), to try it follow the [installation guide](../installation). If you are not such a nerd and prefer a graphical interface suitable for the millennium we live in, there are several tools that offer a [Graphical User Interface](../third-party-tools) (*GUI*) to EPUBcheck.
 
 EPUBcheck can be used both in stand-alone mode or integrated into more complex workflows, for example using it as a Java library.
 
