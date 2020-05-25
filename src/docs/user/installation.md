@@ -35,7 +35,7 @@ To use EPUBcheck from the command line you don't need to start a software instal
 
 On Windows follow these steps:
 
-- Download the [latest version of EPUBcheck](https://daisy.github.io/epubcheck-website/download-latest/)
+- Download the [latest version of EPUBcheck]({{ "/download-latest" | url }})
 - Unzip the downloaded zip file
 - From the command line go to the unpacked folder with the command `cd /path/to/epubcheck-x.y.z/` (the directory name varies depending on the version, based on *epubcheck-x.y.z* pattern)
 - Launch the command `java -jar epubcheck.jar --version`
