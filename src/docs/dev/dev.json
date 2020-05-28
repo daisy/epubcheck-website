@@ -8,6 +8,10 @@
             "label": "Introduction"
         },
         {
+            "url": "/docs/dev/i18n",
+            "label": "Translating EPUBcheck" 
+        },
+        {
             "url": "/docs/dev/issues",
             "label": "Issue tracker" 
         },
