@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="/epubcheck-website/css/style.css">
+    <title>EPUBCheck&nbsp;-&nbsp;User Guide: Use as a Java Library</title>
+</head>
+
+<body>
+    <header>
+        <h1 class="title"><a href="/epubcheck-website/">EPUBCheck</a>:&nbsp; <a href="/epubcheck-website/docs/user"> User Guide </a></h1>
+        <nav aria-label="Main sections">
+            <ul>
+                <li><a href="/epubcheck-website/docs">Docs</a></li>
+                <li><a href="/epubcheck-website/about">About</a></li>
+            </ul>
+        </nav>
+        <form id="search" action="https://duckduckgo.com" method="get">
+            <input name="q" type="text" value="" placeholder="Search" aria-label="Search">
+            <input type="hidden" name="sites" value="https://daisy.github.io/epubcheck-website">
+            <noscript>
+                <button type="submit"><img src="/images/searchIcon.svg" alt="search"></button>
+            </noscript>
+        </form>
+    </header>
+    <main>
+        <h1>Use as a Java Library</h1>
+        <p>You can use EPUBCheck as a library in your Java application. EPUBCheck public interfaces can be found in the <code>com.adobe.epubcheck.api</code> package. The <code>EPUBCheck</code> class can be used to instantiate a validation engine. Use one of its constructors and then call <code>validate()</code> method.</p>
+        <p><strong>Basic example</strong> (snippet):</p>
+        <pre><code class="language-java">File epubFile = new File(&quot;/path/to/your/epub/file.epub&quot;);
+
+// simple constructor; errors are printed on stderr stream
+EPUBCheck epubcheck = new EPUBCheck(epubFile);
+
+// validate() returns true if no errors or warnings are found
+boolean result = epubcheck.validate();
+</code></pre>
+        <p><code>Report</code> is an interface that you can implement to get a list of the errors and warnings reported by the validation engine (instead of the error list being printed out on <code>stderr</code>). See also how to <a href="../extraction">customize the validation report</a>.</p>
+        <p>The default ZIP distribution contains all you need to use EPUBCheck as a library.</p>
+        <h2 id="dependency-information"><a class="direct-link" href="#dependency-information">§</a> Dependency Information</h2>
+        <p>EPUBCheck <code>jar</code> releases are available in the <a href="http://search.maven.org/#search%7Cga%7C1%7Ca%3A%22epubcheck%22">Maven Central Repository</a>.</p>
+        <p>To use it as a library in your project, use the dependency information matching your build tool</p>
+        <h3 id="apache-maven"><a class="direct-link" href="#apache-maven">§</a> Apache Maven</h3>
+        <pre><code class="language-xml">&lt;dependency&gt;
+    &lt;groupId&gt;org.idpf&lt;/groupId&gt;
+    &lt;artifactId&gt;epubcheck&lt;/artifactId&gt;
+    &lt;version&gt;4.1.0&lt;/version&gt;
+&lt;/dependency&gt;
+</code></pre>
+        <h3 id="apache-buildr"><a class="direct-link" href="#apache-buildr">§</a> Apache Buildr</h3>
+        <pre><code class="language-ruby">'org.idpf:epubcheck:jar:4.1.0'
+</code></pre>
+        <h3 id="apache-ivy"><a class="direct-link" href="#apache-ivy">§</a> Apache Ivy</h3>
+        <pre><code class="language-xml">&lt;dependency org=&quot;org.idpf&quot; name=&quot;epubcheck&quot; rev=&quot;4.1.0&quot; /&gt;
+</code></pre>
+        <h3 id="gradle"><a class="direct-link" href="#gradle">§</a> Gradle</h3>
+        <pre><code class="language-groovy">compile group: 'org.idpf', name: 'epubcheck', version: '4.1.0'
+</code></pre>
+        <h3 id="grails"><a class="direct-link" href="#grails">§</a> Grails</h3>
+        <pre><code class="language-groovy">compile 'org.idpf:epubcheck:4.1.0'
+</code></pre>
+        <h3 id="scala-sbt"><a class="direct-link" href="#scala-sbt">§</a> Scala SBT</h3>
+        <pre><code class="language-scala">libraryDependencies += &quot;org.idpf&quot; % &quot;epubcheck&quot; % &quot;4.1.0&quot;
+</code></pre>
+    </main>
+    <nav aria-labelled-by="localnavtitle">
+        <h1 id="localnavtitle">User Guide Sections</h1>
+        <ul>
+            <li><a href="/epubcheck-website/docs/user">Introduction</a></li>
+            <li><a href="/epubcheck-website/docs/user/getting-started">Getting Started</a></li>
+            <li><a href="/epubcheck-website/docs/user/installation">Installation</a></li>
+            <li><a href="/epubcheck-website/docs/user/cli">Command Line</a></li>
+            <li><a href="/epubcheck-website/docs/user/messages">Messages</a></li>
+            <li><a href="/epubcheck-website/docs/user/third-party-tools">Third Party Tools</a></li>
+            <li><a href="/epubcheck-website/docs/user/java-library">Java Library</a></li>
+            <li><a href="/epubcheck-website/docs/user/getting-help">Getting Help</a></li>
+        </ul>
+    </nav>
+    <footer>
+        <p>Last updated today at 6:04 PM</p>
+    </footer>
+    <script type="text/javascript">
+        document.addEventListener("DOMContentLoaded", e => {
+            document.querySelector("form#search input[name='q']").addEventListener("keydown", e => {
+                if (e.keyCode == 13) {
+                    e.target.form.submit();
+                }
+            });
+        });
+    </script>
+    <script type="module" src="/epubcheck-website/versions.js"></script>
+    <script type="module" src="/epubcheck-website/site.js"></script>
+    <script type="module"> import { getLatest } from '/epubcheck-website/versions.js';
+            import { getSitePath, getDocsPath } from '/epubcheck-website/site.js';
+
+            document.addEventListener("DOMContentLoaded", e => {
+                if ( "0.1.0" != getLatest() ) {
+                    showAlert("0.1.0", getLatest());
+                }
+            });
+            function showAlert(thisVersion, latestVersion) {
+                let alert = document.createElement("p");
+                alert.classList.add("alert");
+                alert.innerHTML = `You are viewing an old version (0.1.0).`;
+                let tags = ['docs',];
+                if (tags.includes("docs")) {
+                    alert.innerHTML += ` <a href="${getDocsPath('')}">View the latest documentation</a>.`;
+                } 
+                else {
+                    alert.innerHTML += ` <a href="${getSitePath('')}">View the latest site</a>.`;
+                }
+                let header = document.querySelector("header");
+                header.prepend(alert);
+            }
+        </script>
+</body>
+
+</html>

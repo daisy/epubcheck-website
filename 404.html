@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="/epubcheck-website/css/style.css">
+    <title>EPUBCheck: 404 Not Found</title>
+</head>
+
+<body>
+    <header>
+        <h1 class="title"><a href="/epubcheck-website/">EPUBCheck</a>:&nbsp;404 Not Found</h1>
+        <nav aria-label="Main sections">
+            <ul>
+                <li><a href="/epubcheck-website/docs">Docs</a></li>
+                <li><a href="/epubcheck-website/about">About</a></li>
+            </ul>
+        </nav>
+        <form id="search" action="https://duckduckgo.com" method="get">
+            <input name="q" type="text" value="" placeholder="Search" aria-label="Search">
+            <input type="hidden" name="sites" value="https://daisy.github.io/epubcheck-website">
+            <noscript>
+                <button type="submit"><img src="/images/searchIcon.svg" alt="search"></button>
+            </noscript>
+        </form>
+    </header>
+    <main>
+        <p>We're sorry, that page doesn't exist.</p>
+        <p><a href="/epubcheck-website/">Return home</a></p>
+    </main>
+    <footer>
+        <p>Last updated today at 6:04 PM</p>
+    </footer>
+    <script type="text/javascript">
+        document.addEventListener("DOMContentLoaded", e => {
+            document.querySelector("form#search input[name='q']").addEventListener("keydown", e => {
+                if (e.keyCode == 13) {
+                    e.target.form.submit();
+                }
+            });
+        });
+    </script>
+    <script type="module" src="/epubcheck-website/versions.js"></script>
+    <script type="module" src="/epubcheck-website/site.js"></script>
+    <script type="module"> import { getLatest } from '/epubcheck-website/versions.js';
+            import { getSitePath, getDocsPath } from '/epubcheck-website/site.js';
+
+            document.addEventListener("DOMContentLoaded", e => {
+                if ( "0.1.0" != getLatest() ) {
+                    showAlert("0.1.0", getLatest());
+                }
+            });
+            function showAlert(thisVersion, latestVersion) {
+                let alert = document.createElement("p");
+                alert.classList.add("alert");
+                alert.innerHTML = `You are viewing an old version (0.1.0).`;
+                let tags = [];
+                if (tags.includes("docs")) {
+                    alert.innerHTML += ` <a href="${getDocsPath('')}">View the latest documentation</a>.`;
+                } 
+                else {
+                    alert.innerHTML += ` <a href="${getSitePath('')}">View the latest site</a>.`;
+                }
+                let header = document.querySelector("header");
+                header.prepend(alert);
+            }
+        </script>
+</body>
+
+</html>

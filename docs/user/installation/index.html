@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="/epubcheck-website/css/style.css">
+    <title>EPUBCheck&nbsp;-&nbsp;User Guide: Installation Guide</title>
+</head>
+
+<body>
+    <header>
+        <h1 class="title"><a href="/epubcheck-website/">EPUBCheck</a>:&nbsp; <a href="/epubcheck-website/docs/user"> User Guide </a></h1>
+        <nav aria-label="Main sections">
+            <ul>
+                <li><a href="/epubcheck-website/docs">Docs</a></li>
+                <li><a href="/epubcheck-website/about">About</a></li>
+            </ul>
+        </nav>
+        <form id="search" action="https://duckduckgo.com" method="get">
+            <input name="q" type="text" value="" placeholder="Search" aria-label="Search">
+            <input type="hidden" name="sites" value="https://daisy.github.io/epubcheck-website">
+            <noscript>
+                <button type="submit"><img src="/images/searchIcon.svg" alt="search"></button>
+            </noscript>
+        </form>
+    </header>
+    <main>
+        <h1>Installation Guide</h1>
+        <h2 id="system-prerequisites"><a class="direct-link" href="#system-prerequisites">§</a> System prerequisites</h2>
+        <p>To run the tool you need Java runtime. Any Operating System should do.</p>
+        <p>To check if Java is correctly installed you can use the command (from command line interface, <em>Terminal</em> or <em>Command Prompt</em>):</p>
+        <pre><code>java --version
+</code></pre>
+        <p>If Java is correctly installed the command will return the version of Java Runtime installed, otherwise you have to install Java JRE.</p>
+        <p>To install Java Runtime Enviroment you have two options:</p>
+        <ul>
+            <li><a href="https://www.java.com/en/download/mac_download.jsp">Oracle JRE 1.7, 1.8, 9 or 10+</a></li>
+            <li><a href="https://jdk.java.net/">Open JDK 11+</a></li>
+        </ul>
+        <p><strong>Note on Java:</strong></p>
+        <blockquote>
+            <p>You need at least JRE or JDK 1.6 to run EPUBCheck on the commandline. However, starting with EPUBCheck 4.0 we <em>recommend</em> Java 1.7 or 1.8 to be able to run advanced image checks (Java 1.6 doesn't support those).</p>
+        </blockquote>
+        <p><strong>Note on Java on Mac OS X:</strong></p>
+        <blockquote>
+            <p>Due to the change in ownership of the Apple Java version from Apple to Oracle, Java 1.6 (Apple) and Java 1.7+ (Oracle) are kind of incompatible to each other. To run EPUBCheck with advanced image checks in a Mac OS X Terminal, the <a href="https://www.java.com/en/download/mac_download.jsp">Oracle JRE 1.7, 1.8, 9 or 10+</a> or <a href="https://jdk.java.net/">Open JDK 11+</a> is required!</p>
+        </blockquote>
+        <h2 id="installation"><a class="direct-link" href="#installation">§</a> Installation</h2>
+        <p>EPUBcheck is not a standalone software to install at OS level, but it is a <em>JAR</em> (<em>Java ARchive</em>) package which can be placed anywhere on your file system and must be launched from the command line, using the Java Runtime Enviroment.</p>
+        <p>To use EPUBcheck from the command line you don't need to start a software installation procedure, just download the <a href="https://daisy.github.io/epubcheck-website/download-latest/">latest version of EPUBcheck</a> from the project repository, unzip it and start playing with it.</p>
+        <h3 id="windows"><a class="direct-link" href="#windows">§</a> Windows</h3>
+        <p>On Windows follow these steps:</p>
+        <ul>
+            <li>Download the <a href="/epubcheck-website/download-latest">latest version of EPUBcheck</a></li>
+            <li>Unzip the downloaded zip file</li>
+            <li>From the command line go to the unpacked folder with the command <code>cd /path/to/epubcheck-x.y.z/</code> (the directory name varies depending on the version, based on <em>epubcheck-x.y.z</em> pattern)</li>
+            <li>Launch the command <code>java -jar epubcheck.jar --version</code></li>
+            <li>If everything goes correctly the command will return the EPUBcheck version</li>
+        </ul>
+        <h3 id="macos-and-linux"><a class="direct-link" href="#macos-and-linux">§</a> macOS and Linux</h3>
+        <p>On MacOs or Linux you can use this commands from Terminal to download EPUBcheck and run it in the current working directory:</p>
+        <pre><code>curl -SL https://github.com/w3c/epubcheck/releases/download/v4.2.4/epubcheck-4.2.4.zip | tar -xf -
+cd epubcheck-4.2.4/
+java -jar epubcheck.jar --version
+</code></pre>
+        <p>If everything goes correctly the command will return the EPUBcheck version.</p>
+        <p><strong>Note:</strong></p>
+        <blockquote>
+            <p>EPUBcheck is not a software to install: the unpacked folder can be moved freely in your file system.<br>
+Be careful to <strong>always keep together</strong> all the contents of the folder, especially the <code>epubcheck.jar</code> file and the <code>lib/</code> directory.</p>
+        </blockquote>
+        <h4 id="packaged-versions"><a class="direct-link" href="#packaged-versions">§</a> Packaged versions</h4>
+        <p>EPUBcheck is also available packaged for convenient installation via repository.</p>
+        <h5 id="macos"><a class="direct-link" href="#macos">§</a> macOS</h5>
+        <p>Via <a href="https://brew.sh/">Homebrew</a>:</p>
+        <pre><code>brew install epubcheck
+</code></pre>
+        <h5 id="ubuntu"><a class="direct-link" href="#ubuntu">§</a> Ubuntu</h5>
+        <pre><code>apt-get install epubcheck
+</code></pre>
+        <h3 id="update"><a class="direct-link" href="#update">§</a> Update</h3>
+        <p>Since the software is not installed at OS level, to update EPUBcheck to the latest version, simply <a href="https://daisy.github.io/epubcheck-website/download-latest/">download it</a> (you can follow the <a href="#installation">installation</a> steps if you don't know how to do it).</p>
+        <p>Once downloaded, just replace the old EPUBcheck directory with the new one.</p>
+    </main>
+    <nav aria-labelled-by="localnavtitle">
+        <h1 id="localnavtitle">User Guide Sections</h1>
+        <ul>
+            <li><a href="/epubcheck-website/docs/user">Introduction</a></li>
+            <li><a href="/epubcheck-website/docs/user/getting-started">Getting Started</a></li>
+            <li><a href="/epubcheck-website/docs/user/installation">Installation</a></li>
+            <li><a href="/epubcheck-website/docs/user/cli">Command Line</a></li>
+            <li><a href="/epubcheck-website/docs/user/messages">Messages</a></li>
+            <li><a href="/epubcheck-website/docs/user/third-party-tools">Third Party Tools</a></li>
+            <li><a href="/epubcheck-website/docs/user/java-library">Java Library</a></li>
+            <li><a href="/epubcheck-website/docs/user/getting-help">Getting Help</a></li>
+        </ul>
+    </nav>
+    <footer>
+        <p>Last updated today at 6:04 PM</p>
+    </footer>
+    <script type="text/javascript">
+        document.addEventListener("DOMContentLoaded", e => {
+            document.querySelector("form#search input[name='q']").addEventListener("keydown", e => {
+                if (e.keyCode == 13) {
+                    e.target.form.submit();
+                }
+            });
+        });
+    </script>
+    <script type="module" src="/epubcheck-website/versions.js"></script>
+    <script type="module" src="/epubcheck-website/site.js"></script>
+    <script type="module"> import { getLatest } from '/epubcheck-website/versions.js';
+            import { getSitePath, getDocsPath } from '/epubcheck-website/site.js';
+
+            document.addEventListener("DOMContentLoaded", e => {
+                if ( "0.1.0" != getLatest() ) {
+                    showAlert("0.1.0", getLatest());
+                }
+            });
+            function showAlert(thisVersion, latestVersion) {
+                let alert = document.createElement("p");
+                alert.classList.add("alert");
+                alert.innerHTML = `You are viewing an old version (0.1.0).`;
+                let tags = ['docs',];
+                if (tags.includes("docs")) {
+                    alert.innerHTML += ` <a href="${getDocsPath('')}">View the latest documentation</a>.`;
+                } 
+                else {
+                    alert.innerHTML += ` <a href="${getSitePath('')}">View the latest site</a>.`;
+                }
+                let header = document.querySelector("header");
+                header.prepend(alert);
+            }
+        </script>
+</body>
+
+</html>

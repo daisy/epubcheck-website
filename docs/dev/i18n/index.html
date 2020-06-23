@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="/epubcheck-website/css/style.css">
+    <title>EPUBCheck&nbsp;-&nbsp;Developer Guide: Translating EPUBCheck</title>
+</head>
+
+<body>
+    <header>
+        <h1 class="title"><a href="/epubcheck-website/">EPUBCheck</a>:&nbsp; <a href="/epubcheck-website/docs/dev"> Developer Guide </a></h1>
+        <nav aria-label="Main sections">
+            <ul>
+                <li><a href="/epubcheck-website/docs">Docs</a></li>
+                <li><a href="/epubcheck-website/about">About</a></li>
+            </ul>
+        </nav>
+        <form id="search" action="https://duckduckgo.com" method="get">
+            <input name="q" type="text" value="" placeholder="Search" aria-label="Search">
+            <input type="hidden" name="sites" value="https://daisy.github.io/epubcheck-website">
+            <noscript>
+                <button type="submit"><img src="/images/searchIcon.svg" alt="search"></button>
+            </noscript>
+        </form>
+    </header>
+    <main>
+        <h1>Translating EPUBCheck</h1>
+        <p>EPUBcheck is a fundamental piece of the digital publishing chain, that's why from EPUBCheck 4.0 we added <em>i18n</em> support.</p>
+        <h2 id="contribute-new-languages"><a class="direct-link" href="#contribute-new-languages">§</a> Contribute new languages</h2>
+        <h3 id="via-transifex-preferred-way"><a class="direct-link" href="#via-transifex-preferred-way">§</a> via Transifex <em>(preferred way)</em></h3>
+        <p>We use <a href="https://www.transifex.com">Transifex</a> as <em>translation management system</em> and we encourage you to join Transifex if you'd like to contribute a new language.</p>
+        <p>To do so, or to improve an existing one, please join Transifex and the <a href="https://www.transifex.com/idpf/epubcheck/">EPUBCheck project on Transifex</a>, request a new language and start translating the messages in the Transifex web app.</p>
+        <h4 id="testing"><a class="direct-link" href="#testing">§</a> Testing</h4>
+        <p>To test your changes in a development environment you need to set up the EPUBCheck Java repository (plus install Apache Maven, see <a href="../build">Build</a> for details) and <a href="https://docs.transifex.com/client/installing-the-client">install</a> the <a href="https://docs.transifex.com/client/introduction/">Transifex commandline client</a>.</p>
+        <p>Since the transifex file format and the commandline client have some issues (see 'TODOs' in <a href="https://github.com/w3c/epubcheck/pull/479">#479</a>) we have <a href="https://github.com/w3c/epubcheck/pull/479#issuecomment-146994023">a separate Bash script</a> which wraps the Transifex Commandline Client and normalizes the message properties files upon a transifex pull.</p>
+        <p>To run this script you need to install the Transifex Commandline Client and have a Transifex account.</p>
+        <p>Next you need to set up your <a href="https://www.transifex.com/user/settings/api/">Transifex API key</a> in <code>~/.transifexrc</code>:</p>
+        <pre><code>[https://www.transifex.com]
+api_hostname=https://api.transifex.com
+hostname=https://www.transifex.com
+password=FILL_IN_YOUR_API_KEY_HERE
+username=api
+</code></pre>
+        <p>Then you need to run the wrapper script from EPUBCheck repo root directory!<br>
+e.g. <code>./src/build/transifex-pull.sh --all</code></p>
+        <pre><code>usage: transifex-pull.sh [--all | &lt;locale&gt;]
+examples:
+  transifex-pull.sh --all
+  transifex-pull.sh de
+  transifex-pull.sh ko_KR
+</code></pre>
+        <p><em>Note for Windows users: You need a Bash Console like Cygwin, GitBash, etc. installed in order to run the EPUBCheck transifex client!</em></p>
+        <h4 id="pull-request"><a class="direct-link" href="#pull-request">§</a> Pull Request</h4>
+        <p>When you're finished with translation, please open a new <a href="https://github.com/w3c/epubcheck/issues/new">Issue(!)</a> on GitHub and assign <code>@tofi86</code>.</p>
+        <p><code>@tofi86</code> also coordinates the Transifex localization project and can answer your questions about it.</p>
+        <h3 id="alternative-manual-translation"><a class="direct-link" href="#alternative-manual-translation">§</a> Alternative: manual translation</h3>
+        <p>If you don't want to join Transifex you can manually translate EPUBCheck messages. Simply duplicate the original (english) message files (<code>MessageBundle.properties</code> or <code>messages.properties</code>) located in:</p>
+        <ul>
+            <li><a href="https://github.com/w3c/epubcheck/tree/master/src/main/resources/com/adobe/epubcheck/messages/">src/main/resources/com/adobe/epubcheck/messages/</a></li>
+            <li><a href="https://github.com/w3c/epubcheck/tree/master/src/main/resources/com/adobe/epubcheck/util">src/main/resources/com/adobe/epubcheck/util</a></li>
+            <li><a href="https://github.com/w3c/epubcheck/tree/master/src/main/resources/com/thaiopensource/datatype/xsd/resources">src/main/resources/com/thaiopensource/datatype/xsd/resources</a></li>
+            <li><a href="https://github.com/w3c/epubcheck/tree/master/src/main/resources/com/thaiopensource/relaxng/pattern/resources">src/main/resources/com/thaiopensource/relaxng/pattern/resources</a></li>
+            <li><a href="https://github.com/w3c/epubcheck/tree/master/src/main/resources/com/thaiopensource/validate/schematron/resources">src/main/resources/com/thaiopensource/validate/schematron/resources</a></li>
+            <li><a href="https://github.com/w3c/epubcheck/tree/master/src/main/resources/org/idpf/epubcheck/util/css">src/main/resources/org/idpf/epubcheck/util/css</a></li>
+        </ul>
+        <p>to <code>MessageBundle_XX.properties</code> or <code>messages_XX.properties</code> in its respective folder and start translating.</p>
+        <h4 id="testing-2"><a class="direct-link" href="#testing-2">§</a> Testing</h4>
+        <p>When testing your translation on a system whose locale doesn't match the translation locale (e.g. translating <em>pt_BR</em> on a <em>en_US</em> system) add the <code>--locale xx_YY</code> argument added with EPUBCheck 4.1.0 to your <code>java</code> or <code>mvn</code> commandline call – e.g. <code>java -jar epubcheck.jar --locale pt_BR test.epub</code> to test your new 'brasilian portuguese' translation.</p>
+        <h4 id="pull-request-2"><a class="direct-link" href="#pull-request-2">§</a> Pull Request</h4>
+        <p>When you're finished with translation, please send us a PullRequest with your changes and assign <code>@tofi86</code>.</p>
+        <h2 id="report-typos-and-fixes"><a class="direct-link" href="#report-typos-and-fixes">§</a> Report typos and fixes</h2>
+        <p>If you think the EPUBCheck messages in your language need some improvement, please open a new <a href="https://github.com/w3c/epubcheck/issues/new">Issue</a> on GitHub and contact the localization maintainer (see list below).</p>
+        <h2 id="current-translations-and-its-initial-maintainers"><a class="direct-link" href="#current-translations-and-its-initial-maintainers">§</a> Current translations and its (initial) maintainers:</h2>
+        <ul>
+            <li><code>en</code> - English <ul>
+                    <li><em>(default)</em></li>
+                </ul>
+            </li>
+            <li><code>ja</code> - Japanese <ul>
+                    <li><em>Masayoshi Takahashi (<a href="https://www.github.com/takahashim">@takahashim</a>)</em></li>
+                    <li><em>Satoshi KOJIMA (<a href="https://www.github.com/skoji">@skoji</a>)</em></li>
+                </ul>
+            </li>
+            <li><code>de</code> - German <ul>
+                    <li><em>Tobias Fischer (<a href="https://www.github.com/tofi86">@tofi86</a>)</em></li>
+                </ul>
+            </li>
+            <li><code>es</code> - Spanish <ul>
+                    <li><em>Emiliano Molina (<a href="https://www.github.com/Cuadratin">@Cuadratin</a>)</em></li>
+                </ul>
+            </li>
+            <li><code>fr</code> - French <ul>
+                    <li><em>Vincent Gros (<a href="https://www.github.com/vincent-gros">@vincent-gros</a>)</em></li>
+                </ul>
+            </li>
+            <li><code>it</code> - Italian <ul>
+                    <li><em>Alberto Pettarin (<a href="https://www.github.com/pettarin">@pettarin</a>)</em></li>
+                    <li><em>Fondazione LIA (esp. Elisa Molinari, Gregorio Pellegrino)</em></li>
+                </ul>
+            </li>
+            <li><code>nl</code> - Dutch <ul>
+                    <li><em>Merijn de Haen</em></li>
+                </ul>
+            </li>
+            <li><code>ko_KR</code> - Korean <ul>
+                    <li><em>Woongyoung Park</em></li>
+                </ul>
+            </li>
+            <li><code>pt_BR</code> - Portuguese (Brazil) <ul>
+                    <li><em>Thiago de Oliveira Pereira (<a href="https://www.github.com/thiagoeec">@thiagoeec</a>)</em></li>
+                </ul>
+            </li>
+            <li><code>da</code> - Danish <ul>
+                    <li><em>Marianne Gulstad (<a href="https://www.github.com/MyDK">@MyDK</a>)</em></li>
+                </ul>
+            </li>
+            <li><code>zh_TW</code> - Traditional Chinese (Taiwan) <ul>
+                    <li><em>Bobby Tung (<a href="https://github.com/bobbytung">@bobbytung</a>)</em></li>
+                </ul>
+            </li>
+        </ul>
+    </main>
+    <nav aria-labelled-by="localnavtitle">
+        <h1 id="localnavtitle">Developer Guide Sections</h1>
+        <ul>
+            <li><a href="/epubcheck-website/docs/dev">Introduction</a></li>
+            <li><a href="/epubcheck-website/docs/dev/i18n">Translating EPUBcheck</a></li>
+            <li><a href="/epubcheck-website/docs/dev/issues">Issue tracker</a></li>
+            <li><a href="/epubcheck-website/docs/dev/commits">Writing commits</a></li>
+            <li><a href="/epubcheck-website/docs/dev/build">Build and test</a></li>
+            <li><a href="/epubcheck-website/docs/dev/releases">Releases</a></li>
+            <li><a href="/epubcheck-website/docs/dev/testsuite">Test Suite</a></li>
+            <li><a href="/epubcheck-website/docs/dev/codebase">Codebase</a></li>
+        </ul>
+    </nav>
+    <footer>
+        <p>Last updated today at 6:04 PM</p>
+    </footer>
+    <script type="text/javascript">
+        document.addEventListener("DOMContentLoaded", e => {
+            document.querySelector("form#search input[name='q']").addEventListener("keydown", e => {
+                if (e.keyCode == 13) {
+                    e.target.form.submit();
+                }
+            });
+        });
+    </script>
+    <script type="module" src="/epubcheck-website/versions.js"></script>
+    <script type="module" src="/epubcheck-website/site.js"></script>
+    <script type="module"> import { getLatest } from '/epubcheck-website/versions.js';
+            import { getSitePath, getDocsPath } from '/epubcheck-website/site.js';
+
+            document.addEventListener("DOMContentLoaded", e => {
+                if ( "0.1.0" != getLatest() ) {
+                    showAlert("0.1.0", getLatest());
+                }
+            });
+            function showAlert(thisVersion, latestVersion) {
+                let alert = document.createElement("p");
+                alert.classList.add("alert");
+                alert.innerHTML = `You are viewing an old version (0.1.0).`;
+                let tags = ['docs',];
+                if (tags.includes("docs")) {
+                    alert.innerHTML += ` <a href="${getDocsPath('')}">View the latest documentation</a>.`;
+                } 
+                else {
+                    alert.innerHTML += ` <a href="${getSitePath('')}">View the latest site</a>.`;
+                }
+                let header = document.querySelector("header");
+                header.prepend(alert);
+            }
+        </script>
+</body>
+
+</html>

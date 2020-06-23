@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="/epubcheck-website/css/style.css">
+    <title>EPUBCheck: Home</title>
+</head>
+
+<body>
+    <header class="landing">
+        <div class="hero">
+            <h1>EPUBCheck</h1>
+            <p>Validate EPUB files</p>
+        </div>
+        <nav aria-label="Main sections">
+            <ul>
+                <li><a href="/epubcheck-website/docs">Docs</a></li>
+                <li><a href="/epubcheck-website/about">About</a></li>
+            </ul>
+        </nav>
+        <form id="search" action="https://duckduckgo.com" method="get">
+            <input name="q" type="text" value="" placeholder="Search" aria-label="Search">
+            <input type="hidden" name="sites" value="https://daisy.github.io/epubcheck-website">
+            <noscript>
+                <button type="submit"><img src="/images/searchIcon.svg" alt="search"></button>
+            </noscript>
+        </form>
+    </header>
+    <main class="landing">
+        <div class="desc">
+            <h1>What is it?</h1>
+            <p>EPUBCheck is a tool to validate the conformance of EPUB publications against the EPUB specifications. EPUBCheck can be run as a standalone command-line tool or used as a Java library.</p>
+        </div>
+        <div class="download">
+            <h1>Download</h1>
+            <a id="download" href="https://github.com/w3c/epubcheck/releases/download/v4.2.4/epubcheck-4.2.4.zip"> Latest version (v4.2.4) <span class="deemphasize">2020-06-23</span>
+            </a>
+            <p><a href="https://github.com/w3c/epubcheck/releases">View all releases</a></p>
+        </div>
+        <div class="usage">
+            <h1>Basic usage</h1>
+            <p>EPUBCheck is a command line tool. Unzip the file you downloaded and open a terminal program.</p>
+            <p><em>Example</em>:</p>
+            <pre><code>$ java -jar epubcheck.jar moby_dick.epub</code></pre>
+            <p>Read more about the <a href="/epubcheck-website/docs/user/cli">command line interface</a>.</p>
+        </div>
+    </main>
+    <footer>
+        <p>Last updated today at 6:04 PM</p>
+    </footer>
+    <script type="text/javascript">
+        document.addEventListener("DOMContentLoaded", e => {
+            document.querySelector("form#search input[name='q']").addEventListener("keydown", e => {
+                if (e.keyCode == 13) {
+                    e.target.form.submit();
+                }
+            });
+        });
+    </script>
+    <script type="module" src="/epubcheck-website/versions.js"></script>
+    <script type="module" src="/epubcheck-website/site.js"></script>
+    <script type="module"> import { getLatest } from '/epubcheck-website/versions.js';
+            import { getSitePath, getDocsPath } from '/epubcheck-website/site.js';
+
+            document.addEventListener("DOMContentLoaded", e => {
+                if ( "0.1.0" != getLatest() ) {
+                    showAlert("0.1.0", getLatest());
+                }
+            });
+            function showAlert(thisVersion, latestVersion) {
+                let alert = document.createElement("p");
+                alert.classList.add("alert");
+                alert.innerHTML = `You are viewing an old version (0.1.0).`;
+                let tags = [];
+                if (tags.includes("docs")) {
+                    alert.innerHTML += ` <a href="${getDocsPath('')}">View the latest documentation</a>.`;
+                } 
+                else {
+                    alert.innerHTML += ` <a href="${getSitePath('')}">View the latest site</a>.`;
+                }
+                let header = document.querySelector("header");
+                header.prepend(alert);
+            }
+        </script>
+</body>
+
+</html>

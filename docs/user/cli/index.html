@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="/epubcheck-website/css/style.css">
+    <title>EPUBCheck&nbsp;-&nbsp;User Guide: Command Line Interface</title>
+</head>
+
+<body>
+    <header>
+        <h1 class="title"><a href="/epubcheck-website/">EPUBCheck</a>:&nbsp; <a href="/epubcheck-website/docs/user"> User Guide </a></h1>
+        <nav aria-label="Main sections">
+            <ul>
+                <li><a href="/epubcheck-website/docs">Docs</a></li>
+                <li><a href="/epubcheck-website/about">About</a></li>
+            </ul>
+        </nav>
+        <form id="search" action="https://duckduckgo.com" method="get">
+            <input name="q" type="text" value="" placeholder="Search" aria-label="Search">
+            <input type="hidden" name="sites" value="https://daisy.github.io/epubcheck-website">
+            <noscript>
+                <button type="submit"><img src="/images/searchIcon.svg" alt="search"></button>
+            </noscript>
+        </form>
+    </header>
+    <main>
+        <h1>Command Line Interface</h1>
+        <p>EPUBCheck is a command line tool, all detected errors are simply printed to <code>stderr</code> output stream.</p>
+        <p>There's no native GUI – however, there are some third-party apps offering a GUI. See the <a href="../third-party-tools">Third Party Tools</a> for further details.</p>
+        <h2 id="running-from-the-command-line"><a class="direct-link" href="#running-from-the-command-line">§</a> Running from the command line</h2>
+        <h3 id="overview-of-command-line-arguments"><a class="direct-link" href="#overview-of-command-line-arguments">§</a> Overview of command line arguments</h3>
+        <p>Print the command line help with the <code>--help</code> argument:</p>
+        <pre><code>$ java -jar epubcheck.jar --help
+
+EPUBCheck v4.0.2
+
+When running this tool, the first argument should be the name (with the path)
+of the file to check.
+
+To specify a validation profile (to run checks against a specific EPUB 3 profile
+or extension specification), use the -profile option:
+
+Validation profiles supported:
+--profile default // the default validation profile
+--profile dict    // validates against the EPUB Dictionaries and Glossaries specification
+--profile edupub  // validates against the EDUPUB Profile
+--profile idx     // validates against the EPUB Indexes specification
+--profile preview // validates against the EPUB Previews specification
+
+If checking a non-epub file, the epub version of the file must
+be specified using -v and the type of the file using -mode.
+The default version is: 3.0.
+
+Modes and versions supported: 
+--mode opf -v 2.0
+--mode opf -v 3.0
+--mode xhtml -v 2.0
+--mode xhtml -v 3.0
+--mode svg -v 2.0
+--mode svg -v 3.0
+--mode nav -v 3.0
+--mode mo  -v 3.0 // For Media Overlays validation
+--mode exp  // For expanded EPUB archives
+
+This tool also accepts the following options:
+--save 	       = saves the epub created from the expanded epub
+--out &lt;file&gt;     = output an assessment XML document file (use - to output to console)
+--xmp &lt;file&gt;     = output an assessment XMP document file (use - to output to console)
+--json &lt;file&gt;    = output an assessment JSON document file (use - to output to console)
+-m &lt;file&gt;        = same as --mode
+-p &lt;profile&gt;     = same as --profile
+-o &lt;file&gt;        = same as --out
+-x &lt;file&gt;        = same as --xmp
+-j &lt;file&gt;        = same as --json
+--failonwarnings[+|-] = By default, the tool returns a 1 if errors are found in the file or 0 if no errors
+                        are found.  Using --failonwarnings will cause the process to exit with a status of
+                        1 if either warnings or errors are present and 0 only when there are no errors or warnings.
+-q, --quiet      = no message on console, except errors, only in the output
+-f, --fatal      = include only fatal errors in the output
+-e, --error      = include only error and fatal severity messages in ouput
+-w, --warn       = include fatal, error, and warn severity messages in output
+-u, --usage      = include ePub feature usage information in output
+                    (default is OFF); if enabled, usage information will
+                    always be included in the output file
+
+-l, --listChecks [&lt;file&gt;] = list message ids and severity levels to the custom message file named &lt;file&gt;
+                          or the console
+-c, --customMessages [&lt;file&gt;] = override message severity levels as defined in the custom message file named &lt;file&gt;
+
+-h, -? or --help = displays this help message
+
+No file specified in the arguments. Exiting.
+epubcheck completed
+</code></pre>
+        <h2 id="usage-guide"><a class="direct-link" href="#usage-guide">§</a> Usage guide</h2>
+        <p>Here are some examples of typical use cases of EPUBcheck, to know all the possibilities offered by the tool refer to <a href="#overview-of-command-line-arguments">overview of command line arguments</a>.</p>
+        <h3 id="validating-a-packaged-epub"><a class="direct-link" href="#validating-a-packaged-epub">§</a> Validating a packaged EPUB</h3>
+        <pre><code>java -jar epubcheck.jar file.epub
+</code></pre>
+        <h3 id="specifying-a-validation-profile"><a class="direct-link" href="#specifying-a-validation-profile">§</a> Specifying a validation profile</h3>
+        <p>It is possible to specify a validation profile to validate an EPUB (or single file thereof) against a specific EPUB specification.</p>
+        <pre><code>java -jar epubcheck.jar file.epub -profile PROFILE
+</code></pre>
+        <p>Current profiles include:</p>
+        <ul>
+            <li><strong><code>default</code></strong>: the default validation profile</li>
+            <li><strong><code>dict</code></strong>: validates against the <a href="http://www.idpf.org/epub/dict/epub-dict.html">EPUB Dictionaries and Glossaries</a> specification</li>
+            <li><strong><code>edupub</code></strong>: validates against the <a href="http://www.idpf.org/epub/profiles/edu/spec/">EDUPUB Profile</a></li>
+            <li><strong><code>idx</code></strong>: validates against the <a href="http://www.idpf.org/epub/idx/epub-indexes.html">EPUB Indexes</a> specification</li>
+            <li><strong><code>preview</code></strong>: validates against the <a href="http://www.idpf.org/epub/previews/">EPUB Previews</a> specification</li>
+        </ul>
+        <p><strong>Note:</strong></p>
+        <blockquote>
+            <p>In most cases, it is not required to specify the validation profile explicitly, as it will automatically be set according to <code>dc:type</code> metadata in the Publication. Setting the profile explicitly can be useful to detect when such <code>dc:type</code> metadata is missing, or to validate single files (see next section).</p>
+        </blockquote>
+        <h3 id="validating-a-single-file"><a class="direct-link" href="#validating-a-single-file">§</a> Validating a single file</h3>
+        <p>In addition to validating complete EPUB packages (compressed or expanded) you can validate individual files contained in an EPUB.</p>
+        <pre><code>java -jar epubcheck.jar singleFile -mode MODE -v VERSION -profile PROFILE
+</code></pre>
+        <ul>
+            <li>
+                <p><strong>MODE</strong> must be one of the following:</p>
+            </li>
+            <li>
+                <p><strong><code>opf</code></strong> for package document validation;</p>
+            </li>
+            <li>
+                <p><strong><code>nav</code></strong> for navigation document validation (available only for version 3.0);</p>
+            </li>
+            <li>
+                <p><strong><code>mo</code></strong> for media overlay validation (available only for version 3.0);</p>
+            </li>
+            <li>
+                <p><strong><code>xhtml</code></strong>;</p>
+            </li>
+            <li>
+                <p><strong><code>svg</code></strong>;</p>
+            </li>
+            <li>
+                <p><em><strong><code>exp</code></strong> for Expanded EPUB validation (see the next section)</em></p>
+            </li>
+            <li>
+                <p><strong>VERSION</strong> must be one of</p>
+            </li>
+            <li>
+                <p><code>2.0</code> for EPUB 2</p>
+            </li>
+            <li>
+                <p><code>3.0</code> for EPUB 3</p>
+            </li>
+            <li>
+                <p><strong>PROFILE</strong> is optional (see the previous section).</p>
+            </li>
+        </ul>
+        <p><strong>Note:</strong></p>
+        <blockquote>
+            <p>When validating a single file, only a subset of the available tests is run. Also, when validating a full EPUB, both mode and version are ignored._</p>
+        </blockquote>
+        <h3 id="validating-an-expanded-ie-unzipped-epub"><a class="direct-link" href="#validating-an-expanded-ie-unzipped-epub">§</a> Validating an &quot;expanded&quot; (i.e. unzipped) EPUB</h3>
+        <pre><code>java -jar epubcheck.jar folder/ -mode exp [-save]
+</code></pre>
+        <p>When using expanded mode, there's an optional flag <code>-save</code> to save the created archive upon validation.</p>
+        <h3 id="getting-validation-output-in-a-structured-format"><a class="direct-link" href="#getting-validation-output-in-a-structured-format">§</a> Getting validation output in a structured format</h3>
+        <p>By default the output of EPUBcheck validation is returned to the console in textual format, but you can get the result in a structured format, so it can be processed by other software.</p>
+        <p>The available formats are:</p>
+        <ul>
+            <li>XML: using argument <code>--out</code> (or <code>-o</code>)</li>
+            <li>XMP: using argument <code>--xmp</code> (or <code>-x</code>)</li>
+            <li>JSON: using argument <code>--json</code> (or <code>-j</code>)</li>
+        </ul>
+        <p>The output in the specified format can be saved in a file (specifying the path as argument value), or returned to the console (entering <code>-</code> as argument value).</p>
+        <p>Example of saving the output in JSON format to file:</p>
+        <pre><code>java -jar epubcheck.jar --json output.json file.epub
+</code></pre>
+        <p>Example of output in XML format in the console:</p>
+        <pre><code>java -jar epubcheck.jar --out - file.epub
+</code></pre>
+        <h2 id="troubleshooting"><a class="direct-link" href="#troubleshooting">§</a> Troubleshooting</h2>
+        <h3 id="file-not-found-error"><a class="direct-link" href="#file-not-found-error">§</a> <code>File not found</code> error</h3>
+        <p>If EPUBCheck fails because of Unicode characters in file paths, the following command line parameters can be used:</p>
+        <pre><code>java -Dsun.jnu.encoding=UTF8 -Dfile.encoding=UTF8 -jar epubcheck.jar &quot;Mały Książę - Antoine de Saint-Exupéry.epub&quot;
+</code></pre>
+        <p>(&quot;Mały Książę&quot; = &quot;Le Petit Prince&quot; in Polish)</p>
+        <h3 id="javalangstackoverflowerror"><a class="direct-link" href="#javalangstackoverflowerror">§</a> <code>java.lang.StackOverflowError</code></h3>
+        <p>If EPUBCheck crashes with a <code>StackOverflowError</code>, try adjusting the thread stack size of your Java Virtual Machine. With most Java distributions, this can be done by using the <code>-Xss</code> option of the <code>java</code> command, like in the following example:</p>
+        <pre><code>java -Xss1024k -jar epubcheck.jar moby-dick.epub
+</code></pre>
+    </main>
+    <nav aria-labelled-by="localnavtitle">
+        <h1 id="localnavtitle">User Guide Sections</h1>
+        <ul>
+            <li><a href="/epubcheck-website/docs/user">Introduction</a></li>
+            <li><a href="/epubcheck-website/docs/user/getting-started">Getting Started</a></li>
+            <li><a href="/epubcheck-website/docs/user/installation">Installation</a></li>
+            <li><a href="/epubcheck-website/docs/user/cli">Command Line</a></li>
+            <li><a href="/epubcheck-website/docs/user/messages">Messages</a></li>
+            <li><a href="/epubcheck-website/docs/user/third-party-tools">Third Party Tools</a></li>
+            <li><a href="/epubcheck-website/docs/user/java-library">Java Library</a></li>
+            <li><a href="/epubcheck-website/docs/user/getting-help">Getting Help</a></li>
+        </ul>
+    </nav>
+    <footer>
+        <p>Last updated today at 6:04 PM</p>
+    </footer>
+    <script type="text/javascript">
+        document.addEventListener("DOMContentLoaded", e => {
+            document.querySelector("form#search input[name='q']").addEventListener("keydown", e => {
+                if (e.keyCode == 13) {
+                    e.target.form.submit();
+                }
+            });
+        });
+    </script>
+    <script type="module" src="/epubcheck-website/versions.js"></script>
+    <script type="module" src="/epubcheck-website/site.js"></script>
+    <script type="module"> import { getLatest } from '/epubcheck-website/versions.js';
+            import { getSitePath, getDocsPath } from '/epubcheck-website/site.js';
+
+            document.addEventListener("DOMContentLoaded", e => {
+                if ( "0.1.0" != getLatest() ) {
+                    showAlert("0.1.0", getLatest());
+                }
+            });
+            function showAlert(thisVersion, latestVersion) {
+                let alert = document.createElement("p");
+                alert.classList.add("alert");
+                alert.innerHTML = `You are viewing an old version (0.1.0).`;
+                let tags = ['docs',];
+                if (tags.includes("docs")) {
+                    alert.innerHTML += ` <a href="${getDocsPath('')}">View the latest documentation</a>.`;
+                } 
+                else {
+                    alert.innerHTML += ` <a href="${getSitePath('')}">View the latest site</a>.`;
+                }
+                let header = document.querySelector("header");
+                header.prepend(alert);
+            }
+        </script>
+</body>
+
+</html>

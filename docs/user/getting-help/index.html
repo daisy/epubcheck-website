@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="/epubcheck-website/css/style.css">
+    <title>EPUBCheck&nbsp;-&nbsp;User Guide: Getting Help</title>
+</head>
+
+<body>
+    <header>
+        <h1 class="title"><a href="/epubcheck-website/">EPUBCheck</a>:&nbsp; <a href="/epubcheck-website/docs/user"> User Guide </a></h1>
+        <nav aria-label="Main sections">
+            <ul>
+                <li><a href="/epubcheck-website/docs">Docs</a></li>
+                <li><a href="/epubcheck-website/about">About</a></li>
+            </ul>
+        </nav>
+        <form id="search" action="https://duckduckgo.com" method="get">
+            <input name="q" type="text" value="" placeholder="Search" aria-label="Search">
+            <input type="hidden" name="sites" value="https://daisy.github.io/epubcheck-website">
+            <noscript>
+                <button type="submit"><img src="/images/searchIcon.svg" alt="search"></button>
+            </noscript>
+        </form>
+    </header>
+    <main>
+        <h1>Getting Help</h1>
+        <p>EPUBcheck may seem like software for digital publishing professionals and you may encounter doubts or problems using it, but don't worry, there are several ways to ask for help:</p>
+        <ul>
+            <li>If you have difficulty interpreting the messages in the EPUBcheck report – which can sometimes be a bit cryptic – you can refer to the <a href="../messages/">message guide</a></li>
+            <li>If you still you still have doubts on the meaning of the messages or if you encounter problems running EPUBcheck, you can try asking the <a href="https://twitter.com/hashtag/eprdctn">#eprdctn community</a>: it's an informal group of nice folks that work in the digital publishing field (from all over the world); we are sure there will be someone ready to answer you.</li>
+            <li>Finally, if the problem seems unsolvable, you can <a href="/docs/dev/issues">open an issue on Github</a>, where the EPUBcheck developers are listening, to fix all the bugs of the tool</li>
+        </ul>
+        <p>If you're interested technical discussions are held on our public <a href="https://lists.w3.org/Archives/Public/public-epubcheck/">mailing list</a>. To subscribe to the mailing list, send an email with subject <code>subscribe</code> to <a href="mailto:public-epubcheck-request@w3.org?subject=subscribe">public-epubcheck-request@w3.org</a>. To participate in the discussion, simply send an email to <a href="mailto:public-epubcheck-request@w3.org">public-epubcheck@w3.org</a>.</p>
+    </main>
+    <nav aria-labelled-by="localnavtitle">
+        <h1 id="localnavtitle">User Guide Sections</h1>
+        <ul>
+            <li><a href="/epubcheck-website/docs/user">Introduction</a></li>
+            <li><a href="/epubcheck-website/docs/user/getting-started">Getting Started</a></li>
+            <li><a href="/epubcheck-website/docs/user/installation">Installation</a></li>
+            <li><a href="/epubcheck-website/docs/user/cli">Command Line</a></li>
+            <li><a href="/epubcheck-website/docs/user/messages">Messages</a></li>
+            <li><a href="/epubcheck-website/docs/user/third-party-tools">Third Party Tools</a></li>
+            <li><a href="/epubcheck-website/docs/user/java-library">Java Library</a></li>
+            <li><a href="/epubcheck-website/docs/user/getting-help">Getting Help</a></li>
+        </ul>
+    </nav>
+    <footer>
+        <p>Last updated today at 6:04 PM</p>
+    </footer>
+    <script type="text/javascript">
+        document.addEventListener("DOMContentLoaded", e => {
+            document.querySelector("form#search input[name='q']").addEventListener("keydown", e => {
+                if (e.keyCode == 13) {
+                    e.target.form.submit();
+                }
+            });
+        });
+    </script>
+    <script type="module" src="/epubcheck-website/versions.js"></script>
+    <script type="module" src="/epubcheck-website/site.js"></script>
+    <script type="module"> import { getLatest } from '/epubcheck-website/versions.js';
+            import { getSitePath, getDocsPath } from '/epubcheck-website/site.js';
+
+            document.addEventListener("DOMContentLoaded", e => {
+                if ( "0.1.0" != getLatest() ) {
+                    showAlert("0.1.0", getLatest());
+                }
+            });
+            function showAlert(thisVersion, latestVersion) {
+                let alert = document.createElement("p");
+                alert.classList.add("alert");
+                alert.innerHTML = `You are viewing an old version (0.1.0).`;
+                let tags = ['docs',];
+                if (tags.includes("docs")) {
+                    alert.innerHTML += ` <a href="${getDocsPath('')}">View the latest documentation</a>.`;
+                } 
+                else {
+                    alert.innerHTML += ` <a href="${getSitePath('')}">View the latest site</a>.`;
+                }
+                let header = document.querySelector("header");
+                header.prepend(alert);
+            }
+        </script>
+</body>
+
+</html>

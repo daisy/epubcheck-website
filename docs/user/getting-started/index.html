@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="/epubcheck-website/css/style.css">
+    <title>EPUBCheck&nbsp;-&nbsp;User Guide: Getting Started</title>
+</head>
+
+<body>
+    <header>
+        <h1 class="title"><a href="/epubcheck-website/">EPUBCheck</a>:&nbsp; <a href="/epubcheck-website/docs/user"> User Guide </a></h1>
+        <nav aria-label="Main sections">
+            <ul>
+                <li><a href="/epubcheck-website/docs">Docs</a></li>
+                <li><a href="/epubcheck-website/about">About</a></li>
+            </ul>
+        </nav>
+        <form id="search" action="https://duckduckgo.com" method="get">
+            <input name="q" type="text" value="" placeholder="Search" aria-label="Search">
+            <input type="hidden" name="sites" value="https://daisy.github.io/epubcheck-website">
+            <noscript>
+                <button type="submit"><img src="/images/searchIcon.svg" alt="search"></button>
+            </noscript>
+        </form>
+    </header>
+    <main>
+        <h1>Getting Started</h1>
+        <p>EPUBcheck is the open source tool for <strong>validating digital publications in EPUB format</strong>.</p>
+        <p>Most of the digital publishing supply chain relies on this tool to ensure that digital publications are ready to be distributed and enjoyed on most reading solutions.</p>
+        <h2 id="what-it-does-and-what-it-doesnt-epubcheck"><a class="direct-link" href="#what-it-does-and-what-it-doesnt-epubcheck">§</a> What it does (and what it doesn't) EPUBcheck</h2>
+        <p>If you want to publish an EPUB file, this is the right tool to check its compliancy to the technical specifications.</p>
+        <p>The tool is able to detect many types of errors that may be present in an EPUB file. It checks:</p>
+        <ul>
+            <li>the structure of the container</li>
+            <li>packaging</li>
+            <li>metadata</li>
+            <li>content tagging</li>
+            <li>consistency of internal references</li>
+        </ul>
+        <p>EPUBcheck can validate the technical aspects of the file, but not its content: typos, wrong images, misspellings – the nightmares of every content creator – are not the competence of this tool.</p>
+        <h2 id="how-to-use-epubcheck"><a class="direct-link" href="#how-to-use-epubcheck">§</a> How to use EPUBcheck</h2>
+        <p>EPUBcheck is a <strong>command line interface tool</strong> (<em>CLI</em>: <em>Terminal</em> or <em>Command Prompt</em>), to try it follow the <a href="../installation">installation guide</a>. If you are not such a nerd and prefer a graphical interface suitable for the millennium we live in, there are several tools that offer a <a href="../third-party-tools">Graphical User Interface</a> (<em>GUI</em>) to EPUBcheck.</p>
+        <p>EPUBcheck can be used both in stand-alone mode or integrated into more complex workflows, for example using it as a Java library.</p>
+        <h2 id="understand-the-output-of-epubcheck"><a class="direct-link" href="#understand-the-output-of-epubcheck">§</a> Understand the output of EPUBcheck</h2>
+        <p>Sometimes EPUBcheck messages can be a bit cryptic, that's why we made the <a href="../messages/">messages guide</a> with the explanation of the meanings.</p>
+        <p>If you still have doubts on difficult to understand messages you can <a href="../getting-help/">ask for help</a> through the available channels.</p>
+        <h2 id="get-help-on-epubcheck"><a class="direct-link" href="#get-help-on-epubcheck">§</a> Get help on EPUBcheck</h2>
+        <p>If you have problems using EPUBcheck or understanding its messages, you can <a href="../getting-help/">get help</a> through the available channels.</p>
+    </main>
+    <nav aria-labelled-by="localnavtitle">
+        <h1 id="localnavtitle">User Guide Sections</h1>
+        <ul>
+            <li><a href="/epubcheck-website/docs/user">Introduction</a></li>
+            <li><a href="/epubcheck-website/docs/user/getting-started">Getting Started</a></li>
+            <li><a href="/epubcheck-website/docs/user/installation">Installation</a></li>
+            <li><a href="/epubcheck-website/docs/user/cli">Command Line</a></li>
+            <li><a href="/epubcheck-website/docs/user/messages">Messages</a></li>
+            <li><a href="/epubcheck-website/docs/user/third-party-tools">Third Party Tools</a></li>
+            <li><a href="/epubcheck-website/docs/user/java-library">Java Library</a></li>
+            <li><a href="/epubcheck-website/docs/user/getting-help">Getting Help</a></li>
+        </ul>
+    </nav>
+    <footer>
+        <p>Last updated today at 6:04 PM</p>
+    </footer>
+    <script type="text/javascript">
+        document.addEventListener("DOMContentLoaded", e => {
+            document.querySelector("form#search input[name='q']").addEventListener("keydown", e => {
+                if (e.keyCode == 13) {
+                    e.target.form.submit();
+                }
+            });
+        });
+    </script>
+    <script type="module" src="/epubcheck-website/versions.js"></script>
+    <script type="module" src="/epubcheck-website/site.js"></script>
+    <script type="module"> import { getLatest } from '/epubcheck-website/versions.js';
+            import { getSitePath, getDocsPath } from '/epubcheck-website/site.js';
+
+            document.addEventListener("DOMContentLoaded", e => {
+                if ( "0.1.0" != getLatest() ) {
+                    showAlert("0.1.0", getLatest());
+                }
+            });
+            function showAlert(thisVersion, latestVersion) {
+                let alert = document.createElement("p");
+                alert.classList.add("alert");
+                alert.innerHTML = `You are viewing an old version (0.1.0).`;
+                let tags = ['docs',];
+                if (tags.includes("docs")) {
+                    alert.innerHTML += ` <a href="${getDocsPath('')}">View the latest documentation</a>.`;
+                } 
+                else {
+                    alert.innerHTML += ` <a href="${getSitePath('')}">View the latest site</a>.`;
+                }
+                let header = document.querySelector("header");
+                header.prepend(alert);
+            }
+        </script>
+</body>
+
+</html>
