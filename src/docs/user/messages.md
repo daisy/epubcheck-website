@@ -8,7 +8,7 @@ title: Messages
 
 | Code | Message | Severity | Explanation | Documentation references |
 |------|---------|----------|-------------|--------------------------|
-{% for area in messages %}{% for message in area[1].messages %}{% if message[1].type == "message" and message[1].severity != "suppressed" %}| {{ message[0] }} | {{ message[1].message }} | <span class="severity {{ message[1].severity }}">{{ message[1].severity }}</span> |  |  |
+{% for area in messages %}{% for message in area[1].messages %}{% if message[1].severity != "suppressed" %}| {{ message[0] }} | {{ message[1].message }} | <span class="severity {{ message[1].severity }}">{{ message[1].severity }}</span> | {{ message[1].explanation }} | {% if message[1].references %}{{ message[1].references | join: ", " }}{% endif %} |
 {% endif %}{% endfor %}{% endfor %}
 <style>
 	.severity {
