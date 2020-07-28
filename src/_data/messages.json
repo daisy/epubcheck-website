@@ -5,117 +5,122 @@
 			"ACC_001": {
 				"message": "\"img\" or \"area\" HTML element has no \"alt\" attribute.",
 				"severity": "usage",
-				"type": "message",
-				"references": ["https://www.w3.org/TR/UNDERSTANDING-WCAG20/text-equiv-all.html"]
+				"references": [
+					"https://www.w3.org/TR/UNDERSTANDING-WCAG20/text-equiv-all.html"
+				],
+				"explanation": "All meaningful non-text content that is presented to the user should have a textual alternative that describes the content. The \"alt\" attribute can be used for \"img\" and \"area\" HTML elements."
 			},
 			"ACC_002": {
 				"message": "\"input\" HTML element is not referenced by a corresponding label element.",
 				"severity": "usage",
-				"type": "message",
-				"references": ["https://www.w3.org/TR/UNDERSTANDING-WCAG20/minimize-error-cues.html"]
+				"references": [
+					"https://www.w3.org/TR/UNDERSTANDING-WCAG20/minimize-error-cues.html"
+				],
+				"explanation": "Labels that identify the controls in a form should be used so that users know what input data is expected."
 			},
 			"ACC_003": {
 				"message": "Non-text html elements should include a \"title\" attribute for accessibility.",
-				"severity": "suppressed",
-				"type": "message"
+				"severity": "suppressed"
 			},
 			"ACC_004": {
 				"message": "Html \"a\" element must have text.",
-				"severity": "suppressed",
-				"type": "message"
+				"severity": "suppressed"
 			},
 			"ACC_005": {
 				"message": "Table heading cells should be identified by \"th\" elements for accessibility.",
-				"severity": "suppressed",
-				"type": "message"
+				"severity": "suppressed"
 			},
 			"ACC_006": {
 				"message": "Tables should include a \"thead\" element for accessibility.",
-				"severity": "suppressed",
-				"type": "message"
+				"severity": "suppressed"
 			},
 			"ACC_007": {
 				"message": "Content Documents do not use \"epub:type\" attributes for semantic inflection.",
-				"severity": "suppressed",
-				"type": "message"
+				"severity": "suppressed"
 			},
 			"ACC_008": {
 				"message": "Navigation Document has no \"landmarks nav\" element.",
 				"severity": "usage",
-				"type": "message",
-				"references": ["https://www.w3.org/publishing/epub3/epub-packages.html#sec-nav-landmarks"]
+				"references": [
+					"https://www.w3.org/publishing/epub3/epub-packages.html#sec-nav-landmarks"
+				],
+				"explanation": "Landmarks are convenient for users to quickly jump from one part of the content to another. Their presence facilitates the use by people with access problems to the content."
 			},
 			"ACC_009": {
 				"message": "MathML should either have an \"alttext\" attribute or \"annotation-xml\" child element.",
 				"severity": "usage",
-				"type": "message",
-				"references": ["https://www.w3.org/TR/UNDERSTANDING-WCAG20/text-equiv-all.html"]
+				"references": [
+					"https://www.w3.org/TR/UNDERSTANDING-WCAG20/text-equiv-all.html"
+				],
+				"explanation": "All meaningful non-text content that is presented to the user should have a textual alternative that describes the content. The \"alttext\" attribute or \"annotation-xml\" child element can be used for MathML content."
 			},
 			"ACC_010": {
 				"message": "Headings should not be used within blockquote and figure elements.",
-				"severity": "suppressed",
-				"type": "message"
+				"severity": "suppressed"
 			},
 			"ACC_011": {
 				"message": "SVG hyperlinks should have a human-readable title (using the \"title\" child element or the \"xlink:title\" attribute).",
 				"severity": "warning",
-				"type": "message",
-				"references": ["https://www.w3.org/TR/UNDERSTANDING-WCAG20/text-equiv-all.html"]
+				"references": [
+					"https://www.w3.org/TR/UNDERSTANDING-WCAG20/text-equiv-all.html"
+				],
+				"explanation": "Visual interactive content that is presented to the user should have a textual alternative. The \"title\" child element or the \"xlink:title\" attribute can be used for SVG links."
 			},
 			"ACC_012": {
 				"message": "Table elements should include a caption element.",
-				"severity": "suppressed",
-				"type": "message"
+				"severity": "suppressed"
 			},
 			"ACC_013": {
 				"message": "Content file contains at least one inline style declaration.",
 				"severity": "usage",
-				"type": "message"
-			},
-			"ACC_013_SUG": {
-				"message": "Inline styles are not compatible with accessibility settings and display personalization. Use CSS Styles instead.",
-				"type": "suggestion"
+				"explanation": "Inline styles in HTML code almost always overwrite externally linked style sheets, including custom, user-defined style sheets that can help visually impaired people adapt content to their needs (enlarged fonts, color scheme, etc.). For this reason, the use of embedded styles should be avoided.",
+				"suggestions": {
+					"ACC_013_SUG": "Inline styles are not compatible with accessibility settings and display personalization. Use CSS Styles instead."
+				}
 			},
 			"ACC_014": {
 				"message": "Value of CSS property \"font-size\" does not use a relative size: \"%1$s\"",
 				"severity": "usage",
-				"type": "message",
-				"references": ["https://www.w3.org/TR/UNDERSTANDING-WCAG20/visual-audio-contrast-visual-presentation.html"]
-			},
-			"ACC_014_SUG": {
-				"message": "Acceptable values include percentages, em multiples, \"larger\", \"smaller\", \"normal\" or \"inherit\".",
-				"type": "suggestion"
+				"references": [
+					"https://www.w3.org/TR/UNDERSTANDING-WCAG20/visual-audio-contrast-visual-presentation.html"
+				],
+				"explanation": "The use of fixed units of measurement can create problems with some reading solutions when the user changes the font size and line-height settings, making the content unreadable. It is suggested to always use relative units of measure.",
+				"suggestions": {
+					"ACC_014_SUG": "Acceptable values include percentages, em multiples, \"larger\", \"smaller\", \"normal\" or \"inherit\"."
+				}
 			},
 			"ACC_015": {
 				"message": "Value of CSS property \"line-height\" does not use a relative size.",
 				"severity": "usage",
-				"type": "message",
-				"references": [],
-				"references": ["https://www.w3.org/TR/UNDERSTANDING-WCAG20/visual-audio-contrast-visual-presentation.html"]
-			},
-			"ACC_015_SUG": {
-				"message": "Acceptable values include percentages, numeric multiples, em multiples, \"normal\", or \"inherit\".",
-				"type": "suggestion"
+				"references": [
+					"https://www.w3.org/TR/UNDERSTANDING-WCAG20/visual-audio-contrast-visual-presentation.html"
+				],
+				"explanation": "The use of fixed units of measurement can create problems with some reading solutions when the user changes the font size and line-height settings, making the content unreadable. It is suggested to always use relative units of measure.",
+				"suggestions": {
+					"ACC_015_SUG": "Acceptable values include percentages, numeric multiples, em multiples, \"normal\", or \"inherit\"."
+				}
 			},
 			"ACC_016": {
 				"message": "Value of CSS property \"font-size\" should use a relative size: \"%1$s\"",
 				"severity": "usage",
-				"type": "message",
-				"references": ["https://www.w3.org/TR/UNDERSTANDING-WCAG20/visual-audio-contrast-visual-presentation.html"]
-			},
-			"ACC_016_SUG": {
-				"message": "Acceptable values include percentages, em multiples, \"larger\", \"smaller\", \"normal\" or \"inherit\".",
-				"type": "suggestion"
+				"references": [
+					"https://www.w3.org/TR/UNDERSTANDING-WCAG20/visual-audio-contrast-visual-presentation.html"
+				],
+				"explanation": "The use of fixed units of measurement can create problems with some reading solutions when the user changes the font size and line-height settings, making the content unreadable. It is suggested to always use relative units of measure.",
+				"suggestions": {
+					"ACC_016_SUG": "Acceptable values include percentages, em multiples, \"larger\", \"smaller\", \"normal\" or \"inherit\"."
+				}
 			},
 			"ACC_017": {
 				"message": "Value of CSS property \"line-height\" does not use a relative size.",
 				"severity": "usage",
-				"type": "message",
-				"references": ["https://www.w3.org/TR/UNDERSTANDING-WCAG20/visual-audio-contrast-visual-presentation.html"]
-			},
-			"ACC_017_SUG": {
-				"message": "Acceptable values include percentages, numeric multiples, em multiples, \"normal\", or \"inherit\".",
-				"type": "suggestion"
+				"references": [
+					"https://www.w3.org/TR/UNDERSTANDING-WCAG20/visual-audio-contrast-visual-presentation.html"
+				],
+				"explanation": "The use of fixed units of measurement can create problems with some reading solutions when the user changes the font size and line-height settings, making the content unreadable. It is suggested to always use relative units of measure.",
+				"suggestions": {
+					"ACC_017_SUG": "Acceptable values include percentages, numeric multiples, em multiples, \"normal\", or \"inherit\"."
+				}
 			}
 		}
 	},
@@ -124,43 +129,35 @@
 		"messages": {
 			"CHK_001": {
 				"message": "The custom message overrides file was not found.",
-				"severity": "error",
-				"type": "message"
+				"severity": "error"
 			},
 			"CHK_002": {
 				"message": "Unrecognized custom message id %1$s encountered in message overrides file \"%2$s\".",
-				"severity": "error",
-				"type": "message"
+				"severity": "error"
 			},
 			"CHK_003": {
 				"message": "Unrecognized custom message severity \"%1$s\" encountered in message overrides file \"%2$s\".",
-				"severity": "error",
-				"type": "message"
+				"severity": "error"
 			},
 			"CHK_004": {
 				"message": "The custom message contains too many parameters in message overrides file \"%1$s\".",
-				"severity": "error",
-				"type": "message"
+				"severity": "error"
 			},
 			"CHK_005": {
 				"message": "The custom suggestion contains too many parameters in message overrides file \"%1$s\".",
-				"severity": "error",
-				"type": "message"
+				"severity": "error"
 			},
 			"CHK_006": {
 				"message": "Unable to parse the custom format parameter in message overrides file \"%1$s\".",
-				"severity": "error",
-				"type": "message"
+				"severity": "error"
 			},
 			"CHK_007": {
 				"message": "Error encountered while processing custom message file \"%1$s\": \"%2$s\".",
-				"severity": "error",
-				"type": "message"
+				"severity": "error"
 			},
 			"CHK_008": {
 				"message": "Error encountered while processing an item \"%1$s\"; skip other checks for the item.",
-				"severity": "error",
-				"type": "message"
+				"severity": "error"
 			}
 		}
 	},
@@ -169,143 +166,114 @@
 		"messages": {
 			"CSS_001": {
 				"message": "The \"%1$s\" property must not be included in an EPUB Style Sheet.",
-				"severity": "error",
-				"type": "message"
+				"severity": "error"
 			},
 			"CSS_002": {
 				"message": "Empty or NULL reference found.",
-				"severity": "error",
-				"type": "message"
+				"severity": "error"
 			},
 			"CSS_003": {
 				"message": "Only UTF-8 and UTF-16 encodings are allowed, detected %1$s.",
-				"severity": "error",
-				"type": "message"
+				"severity": "error"
 			},
 			"CSS_004": {
 				"message": "Only UTF-8 and UTF-16 encodings are allowed, detected %1$s BOM.",
-				"severity": "error",
-				"type": "message"
+				"severity": "error"
 			},
 			"CSS_005": {
 				"message": "Conflicting alternate style attributes found: %1$s.",
-				"severity": "error",
-				"type": "message"
+				"severity": "error"
 			},
 			"CSS_006": {
 				"message": "CSS selector specifies fixed position.",
-				"severity": "usage",
-				"type": "message"
+				"severity": "usage"
 			},
 			"CSS_007": {
 				"message": "Font-face reference \"%1$s\" refers to non-standard font type \"%2$s\".",
-				"severity": "info",
-				"type": "message"
+				"severity": "info"
 			},
 			"CSS_008": {
 				"message": "An error occurred while parsing the CSS: %1$s.",
-				"severity": "error",
-				"type": "message"
+				"severity": "error"
 			},
 			"CSS_009": {
 				"message": "Use of certain CSS such as Columns, Transforms, Transitions, box-sizing or KeyFrames can cause pagination issues.",
-				"severity": "usage",
-				"type": "message"
+				"severity": "usage"
 			},
 			"CSS_010": {
 				"message": "Stylesheet of type other than \"text/css\" must have a fallback.",
-				"severity": "error",
-				"type": "message"
+				"severity": "error"
 			},
 			"CSS_011": {
 				"message": "Excessive number of css files.",
 				"severity": "suppressed",
-				"type": "message"
-			},
-			"CSS_011_SUG": {
-				"message": "Consider merging CSS files to reduce the number of CSS files.",
-				"type": "suggestion"
+				"suggestions": {
+					"CSS_011_SUG": "Consider merging CSS files to reduce the number of CSS files."
+				}
 			},
 			"CSS_012": {
 				"message": "Document links to multiple CSS files.",
-				"severity": "usage",
-				"type": "message"
+				"severity": "usage"
 			},
 			"CSS_013": {
 				"message": "CSS property is declared !Important.",
-				"severity": "usage",
-				"type": "message"
+				"severity": "usage"
 			},
 			"CSS_015": {
 				"message": "Alternate Stylesheet has no title.",
-				"severity": "error",
-				"type": "message"
+				"severity": "error"
 			},
 			"CSS_016": {
 				"message": "Alternate Stylesheet precedes primary stylesheet.",
-				"severity": "suppressed",
-				"type": "message"
+				"severity": "suppressed"
 			},
 			"CSS_017": {
 				"message": "CSS selector specifies absolute position.",
-				"severity": "usage",
-				"type": "message"
+				"severity": "usage"
 			},
 			"CSS_019": {
 				"message": "CSS font-face declaration has no attributes.",
-				"severity": "warning",
-				"type": "message"
+				"severity": "warning"
 			},
 			"CSS_020": {
 				"message": "CSS font selector declaration uses unexpected font-size value \"%1$s\".",
 				"severity": "error",
-				"type": "message"
-			},
-			"CSS_020_SUG": {
-				"message": "Acceptable values include percentages, em multiples, \"larger\", \"smaller\", \"normal\" or \"inherit\".",
-				"type": "suggestion"
+				"suggestions": {
+					"CSS_020_SUG": "Acceptable values include percentages, em multiples, \"larger\", \"smaller\", \"normal\" or \"inherit\"."
+				}
 			},
 			"CSS_021": {
 				"message": "Shorthand CSS property \"font-family\" specifies an invalid System Font.",
 				"severity": "usage",
-				"type": "message"
-			},
-			"CSS_021_SUG": {
-				"message": "Acceptable values include \"caption\", \"icon\", \"menu\", \"message-box\", \"small-caption\",  \"status-bar\", or \"inherit\".",
-				"type": "suggestion"
+				"suggestions": {
+					"CSS_021_SUG": "Acceptable values include \"caption\", \"icon\", \"menu\", \"message-box\", \"small-caption\",  \"status-bar\", or \"inherit\"."
+				}
 			},
 			"CSS_022": {
 				"message": "CSS selector specifies global margin setting.",
-				"severity": "usage",
-				"type": "message"
+				"severity": "usage"
 			},
 			"CSS_023": {
 				"message": "CSS selector specifies media query.",
-				"severity": "usage",
-				"type": "message"
+				"severity": "usage"
 			},
 			"CSS_024": {
 				"message": "CSS class Selector is not used.",
 				"severity": "usage",
-				"type": "message"
-			},
-			"CSS_024_SUG": {
-				"message": "Remove unused CSS selectors.",
-				"type": "suggestion"
+				"suggestions": {
+					"CSS_024_SUG": "Remove unused CSS selectors."
+				}
 			},
 			"CSS_025": {
 				"message": "CSS class Selector could not be found.",
 				"severity": "usage",
-				"type": "message"
-			},
-			"CSS_025_SUG": {
-				"message": "Check for typos or define a class selector to document the use of the class.",
-				"type": "suggestion"
+				"suggestions": {
+					"CSS_025_SUG": "Check for typos or define a class selector to document the use of the class."
+				}
 			},
 			"CSS_028": {
 				"message": "Use of Font-face declaration.",
-				"severity": "usage",
-				"type": "message"
+				"severity": "usage"
 			}
 		}
 	},
@@ -314,257 +282,204 @@
 		"messages": {
 			"HTM_001": {
 				"message": "Any publication resource that is an XML-based media type must be a valid XML 1.0 document. XML version found: %1$s.",
-				"severity": "error",
-				"type": "message"
+				"severity": "error"
 			},
 			"HTM_002": {
 				"message": "The installed xml parser doesn’t support xml version verification. Xml files must be a valid XML 1.0 document.",
-				"severity": "warning",
-				"type": "message"
+				"severity": "warning"
 			},
 			"HTM_003": {
 				"message": "External entities are not allowed in EPUB v3 documents. External entity declaration found: %1$s.",
-				"severity": "error",
-				"type": "message"
+				"severity": "error"
 			},
 			"HTM_004": {
 				"message": "Irregular DOCTYPE: found \"%1$s\", expected \"%2$s\".",
-				"severity": "error",
-				"type": "message"
+				"severity": "error"
 			},
 			"HTM_005": {
 				"message": "An external reference was found.",
-				"severity": "usage",
-				"type": "message"
+				"severity": "usage"
 			},
 			"HTM_006": {
 				"message": "An XHTML Named Entity was found.",
-				"severity": "usage",
-				"type": "message"
+				"severity": "usage"
 			},
 			"HTM_007": {
 				"message": "Empty or whitespace-only value of attribute ssml:ph.",
-				"severity": "warning",
-				"type": "message"
+				"severity": "warning"
 			},
 			"HTM_008": {
 				"message": "The src attribute is required.",
-				"severity": "error",
-				"type": "message"
+				"severity": "error"
 			},
 			"HTM_009": {
 				"message": "The DOCTYPE provided is obsolete or irregular and can be removed.",
-				"severity": "error",
-				"type": "message"
+				"severity": "error"
 			},
 			"HTM_010": {
 				"message": "Namespace uri \"%1$s\" was found.",
-				"severity": "usage",
-				"type": "message"
+				"severity": "usage"
 			},
 			"HTM_011": {
 				"message": "Entity is undeclared.",
 				"severity": "error",
-				"type": "message"
-			},
-			"HTM_011_SUG": {
-				"message": "Define the entity or use the numbered entity instead.",
-				"type": "suggestion"
+				"suggestions": {
+					"HTM_011_SUG": "Define the entity or use the numbered entity instead."
+				}
 			},
 			"HTM_012": {
 				"message": "Found a link to a CFI in an external book.",
-				"severity": "usage",
-				"type": "message"
+				"severity": "usage"
 			},
 			"HTM_013": {
 				"message": "Intra-Publication CFIs found in document.",
-				"severity": "usage",
-				"type": "message"
+				"severity": "usage"
 			},
 			"HTM_014": {
 				"message": "Invalid file extension for HTML file, expecting (html, htm or xhtml).",
-				"severity": "warning",
-				"type": "message"
+				"severity": "warning"
 			},
 			"HTM_014a": {
 				"message": "XHTML Content Document file name \"%1$s\" should have the extension \".xhtml\".",
-				"severity": "warning",
-				"type": "message"
+				"severity": "warning"
 			},
 			"HTM_015": {
 				"message": "HTML4 DOCTYPE definition within EPUB v3.",
-				"severity": "suppressed",
-				"type": "message"
+				"severity": "suppressed"
 			},
 			"HTM_016": {
 				"message": "HTML5 DOCTYPE definition within EPUB v2.",
-				"severity": "suppressed",
-				"type": "message"
+				"severity": "suppressed"
 			},
 			"HTM_017": {
 				"message": "Content file has different language value in attributes xml:lang and lang.",
-				"severity": "error",
-				"type": "message"
+				"severity": "error"
 			},
 			"HTM_018": {
 				"message": "Content file has invalid language value at attribute xml:lang.",
-				"severity": "usage",
-				"type": "message"
+				"severity": "usage"
 			},
 			"HTM_019": {
 				"message": "Content file has invalid language definition at attribute lang.",
-				"severity": "usage",
-				"type": "message"
+				"severity": "usage"
 			},
 			"HTM_020": {
 				"message": "Content file doesn’t contain xml:lang attribute.",
-				"severity": "usage",
-				"type": "message"
+				"severity": "usage"
 			},
 			"HTM_021": {
 				"message": "Content file doesn’t contain lang attribute.",
-				"severity": "usage",
-				"type": "message"
+				"severity": "usage"
 			},
 			"HTM_022": {
 				"message": "Document may contain excessive DIV or SPAN tags.",
 				"severity": "usage",
-				"type": "message"
-			},
-			"HTM_022_SUG": {
-				"message": "Merge DIV or SPAN tags when they are consecutive and use the same style.",
-				"type": "suggestion"
+				"suggestions": {
+					"HTM_022_SUG": "Merge DIV or SPAN tags when they are consecutive and use the same style."
+				}
 			},
 			"HTM_023": {
 				"message": "An invalid XHTML Named Entity was found: \"%1$s\".",
 				"severity": "suppressed",
-				"type": "message"
-			},
-			"HTM_023_SUG": {
-				"message": "Check the spelling or use numbered entities instead.",
-				"type": "suggestion"
+				"suggestions": {
+					"HTM_023_SUG": "Check the spelling or use numbered entities instead."
+				}
 			},
 			"HTM_024": {
 				"message": "An XHTML Named Entity was found. Only \"&amp;\" \"&apos;\" \"&quote;\" \"&lt;\" or \"&gt;\" are allowed.",
 				"severity": "suppressed",
-				"type": "message"
-			},
-			"HTM_024_SUG": {
-				"message": "Check the spelling or use numbered entities instead.",
-				"type": "suggestion"
+				"suggestions": {
+					"HTM_024_SUG": "Check the spelling or use numbered entities instead."
+				}
 			},
 			"HTM_025": {
 				"message": "Non-registered URI scheme type found in href.",
-				"severity": "warning",
-				"type": "message"
+				"severity": "warning"
 			},
 			"HTM_027": {
 				"message": "List contains less than 2 items.",
 				"severity": "usage",
-				"type": "message"
-			},
-			"HTM_027_SUG": {
-				"message": "Lists should have more than one item for accessibility.",
-				"type": "suggestion"
+				"suggestions": {
+					"HTM_027_SUG": "Lists should have more than one item for accessibility."
+				}
 			},
 			"HTM_028": {
 				"message": "Input html elements should include an id.",
-				"severity": "usage",
-				"type": "message"
+				"severity": "usage"
 			},
 			"HTM_029": {
 				"message": "Label html elements should include a \"for\" attribute referencing the id of an input element.",
-				"severity": "usage",
-				"type": "message"
+				"severity": "usage"
 			},
 			"HTM_033": {
 				"message": "HTML \"head\" element does not have a \"title\" child element.",
-				"severity": "usage",
-				"type": "message"
+				"severity": "usage"
 			},
 			"HTM_036": {
 				"message": "IFrames are highly discouraged.",
-				"severity": "suppressed",
-				"type": "message"
+				"severity": "suppressed"
 			},
 			"HTM_038": {
 				"message": "Ensure b, i, em, and strong elements are used in compliance with W3C HTML5 directives.",
 				"severity": "suppressed",
-				"type": "message"
-			},
-			"HTM_038_SUG": {
-				"message": "CSS styles are usually more appropriate for italics or bold text.",
-				"type": "suggestion"
+				"suggestions": {
+					"HTM_038_SUG": "CSS styles are usually more appropriate for italics or bold text."
+				}
 			},
 			"HTM_044": {
 				"message": "Namespace uri \"%1$s\" was included but not used.",
 				"severity": "usage",
-				"type": "message"
-			},
-			"HTM_044_SUG": {
-				"message": "Remove unused Namespace URIs.",
-				"type": "suggestion"
+				"suggestions": {
+					"HTM_044_SUG": "Remove unused Namespace URIs."
+				}
 			},
 			"HTM_045": {
 				"message": "Encountered empty href.",
 				"severity": "usage",
-				"type": "message"
-			},
-			"HTM_045_SUG": {
-				"message": "Empty hrefs are valid self-references.  These should be validated to ensure that this is the desired intent.",
-				"type": "suggestion"
+				"suggestions": {
+					"HTM_045_SUG": "Empty hrefs are valid self-references.  These should be validated to ensure that this is the desired intent."
+				}
 			},
 			"HTM_046": {
 				"message": "Fixed format item has no viewport defined.",
 				"severity": "error",
-				"type": "message"
-			},
-			"HTM_046_SUG": {
-				"message": "A viewport declaration is required for fixed format items.",
-				"type": "suggestion"
+				"suggestions": {
+					"HTM_046_SUG": "A viewport declaration is required for fixed format items."
+				}
 			},
 			"HTM_047": {
 				"message": "Html viewport is missing height and/or width.",
 				"severity": "error",
-				"type": "message"
-			},
-			"HTM_047_SUG": {
-				"message": "The viewport declaration must declare both width and height.",
-				"type": "suggestion"
+				"suggestions": {
+					"HTM_047_SUG": "The viewport declaration must declare both width and height."
+				}
 			},
 			"HTM_048": {
 				"message": "SVG Fixed-Layout Documents must have a \"viewBox\" attribute (on the outermost \"svg\" element).",
-				"severity": "error",
-				"type": "message"
+				"severity": "error"
 			},
 			"HTM_049": {
 				"message": "Html element does not have an xmlns set to \"http://www.w3.org/1999/xhtml\".",
 				"severity": "error",
-				"type": "message"
-			},
-			"HTM_049_SUG": {
-				"message": "Add xmlns=\"http://www.w3.org/1999/xhtml\" to the html element.",
-				"type": "suggestion"
+				"suggestions": {
+					"HTM_049_SUG": "Add xmlns=\"http://www.w3.org/1999/xhtml\" to the html element."
+				}
 			},
 			"HTM_050": {
 				"message": "Found epub:type=\"pagebreak\" attribute in content document.",
-				"severity": "usage",
-				"type": "message"
+				"severity": "usage"
 			},
 			"HTM_051": {
 				"message": "Found Microdata semantic enrichments but no RDFa. EDUPUB recommends using RDFa Lite.",
-				"severity": "warning",
-				"type": "message"
+				"severity": "warning"
 			},
 			"HTM_052": {
 				"message": "The property \"region-based\" is only allowed on nav elements in Data Navigation Documents.",
-				"severity": "error",
-				"type": "message"
+				"severity": "error"
 			},
 			"HTM_053": {
 				"message": "Found an external file link (file://) in file: \"%1$s\".",
-				"severity": "info",
-				"type": "message"
+				"severity": "info"
 			}
 		}
 	},
@@ -573,8 +488,7 @@
 		"messages": {
 			"INF_001": {
 				"message": "The previous rule is under review and its severity may change in a future release. See the discussion at %1$s",
-				"severity": "info",
-				"type": "message"
+				"severity": "info"
 			}
 		}
 	},
@@ -583,38 +497,31 @@
 		"messages": {
 			"MED_001": {
 				"message": "Video poster must have core media image type.",
-				"severity": "error",
-				"type": "message"
+				"severity": "error"
 			},
 			"MED_002": {
 				"message": "%1$s element doesn’t provide fallback.",
-				"severity": "error",
-				"type": "message"
+				"severity": "error"
 			},
 			"MED_003": {
 				"message": "A manifest fallback must be provided for image resource \"%1$s\" of type \"%2$s\".",
-				"severity": "error",
-				"type": "message"
+				"severity": "error"
 			},
 			"MED_004": {
 				"message": "Image file header may be corrupted.",
-				"severity": "error",
-				"type": "message"
+				"severity": "error"
 			},
 			"MED_005": {
 				"message": "Media Overlay audio reference %1$s to non-standard audio type %2$s found.",
-				"severity": "error",
-				"type": "message"
+				"severity": "error"
 			},
 			"MED_006": {
 				"message": "Some browsers do not support rendering SVG images which use a filename in the xlink:href property.",
-				"severity": "usage",
-				"type": "message"
+				"severity": "usage"
 			},
 			"MED_007": {
 				"message": "Foreign resources can only be referenced from \"source\" elements with an explicit \"type\" attribute; found resource \"%1$s\" of foreign type \"%2$s\".",
-				"severity": "error",
-				"type": "message"
+				"severity": "error"
 			}
 		}
 	},
@@ -623,66 +530,51 @@
 		"messages": {
 			"NAV_001": {
 				"message": "The nav file is not supported for EPUB v2.",
-				"severity": "error",
-				"type": "message"
+				"severity": "error"
 			},
 			"NAV_002": {
 				"message": "Found epub:type=\"page-list\" in nav document",
-				"severity": "usage",
-				"type": "message"
+				"severity": "usage"
 			},
 			"NAV_003": {
 				"message": "The Navigation Document must have a page list when content document(s) contain page breaks (epub:type=\"pagebreak\").",
-				"severity": "error",
-				"type": "message"
+				"severity": "error"
 			},
 			"NAV_004": {
 				"message": "The Navigation Document should contain the full document heading hierarchy in EDUPUB.",
-				"severity": "usage",
-				"type": "message"
+				"severity": "usage"
 			},
 			"NAV_005": {
 				"message": "Content documents contain \"audio\" elements but the Navigation Document does not have a listing of audio clips (epub:type=\"loa\").",
-				"severity": "usage",
-				"type": "message"
+				"severity": "usage"
 			},
 			"NAV_006": {
 				"message": "Content documents contain \"figure\" elements but the Navigation Document does not have a listing of figures (epub:type=\"loi\").",
-				"severity": "usage",
-				"type": "message"
+				"severity": "usage"
 			},
 			"NAV_007": {
 				"message": "Content documents contain \"table\" elements but the Navigation Document does not have a listing of tables (epub:type=\"lot\").",
-				"severity": "usage",
-				"type": "message"
+				"severity": "usage"
 			},
 			"NAV_008": {
 				"message": "Content documents contain \"video\" elements but the Navigation Document does not have a listing of video clips (epub:type=\"lov\").",
-				"severity": "usage",
-				"type": "message"
+				"severity": "usage"
 			},
 			"NAV_009": {
 				"message": "Region-based navigation links must point to Fixed-Layout Documents.",
-				"severity": "error",
-				"type": "message"
+				"severity": "error"
 			},
 			"NAV_010": {
 				"message": "\"%1$s\" nav must not link to remote resources; found link to \"%2$s\".",
-				"severity": "error",
-				"type": "message"
+				"severity": "error"
 			},
 			"NAV_011": {
 				"message": "\"%1$s\" nav must be in reading order; link target \"%2$s\" is before the previous link’s target in %3$s order.",
 				"severity": "warning",
-				"type": "message"
-			},
-			"NAV_011_SUG.spine": {
-				"message": "spine",
-				"type": "suggestion"
-			},
-			"NAV_011_SUG.document": {
-				"message": "document",
-				"type": "suggestion"
+				"suggestions": {
+					"NAV_011_SUG.spine": "spine",
+					"NAV_011_SUG.document": "document"
+				}
 			}
 		}
 	},
@@ -691,33 +583,27 @@
 		"messages": {
 			"NCX_001": {
 				"message": "NCX identifier (\"%1$s\") does not match OPF identifier (\"%2$s\").",
-				"severity": "error",
-				"type": "message"
+				"severity": "error"
 			},
 			"NCX_002": {
 				"message": "toc attribute was not found on the spine element.",
-				"severity": "error",
-				"type": "message"
+				"severity": "error"
 			},
 			"NCX_003": {
 				"message": "An .NCX file is required for TOC navigation on EPUB v2 readers.",
-				"severity": "usage",
-				"type": "message"
+				"severity": "usage"
 			},
 			"NCX_004": {
 				"message": "NCX identifier (\"dtb:uid\" metadata) should not contain leading or trailing whitespace.",
-				"severity": "usage",
-				"type": "message"
+				"severity": "usage"
 			},
 			"NCX_005": {
 				"message": "Found ncx \"page-list\" in .ncx file",
-				"severity": "usage",
-				"type": "message"
+				"severity": "usage"
 			},
 			"NCX_006": {
 				"message": "Empty \"text\" label in the NCX document",
-				"severity": "usage",
-				"type": "message"
+				"severity": "usage"
 			}
 		}
 	},
@@ -726,568 +612,423 @@
 		"messages": {
 			"OPF_001": {
 				"message": "There was an error when parsing the EPUB version: %1$s.",
-				"severity": "error",
-				"type": "message"
+				"severity": "error"
 			},
 			"OPF_002": {
 				"message": "The OPF file \"%1$s\" was not found in the EPUB.",
-				"severity": "fatal",
-				"type": "message"
+				"severity": "fatal"
 			},
 			"OPF_003": {
 				"message": "Item \"%1$s\" exists in the EPUB, but is not declared in the OPF manifest.",
-				"severity": "warning",
-				"type": "message"
+				"severity": "warning"
 			},
 			"OPF_004": {
 				"message": "Invalid prefix declaration: leading or trailing whitespace is not allowed.",
-				"severity": "warning",
-				"type": "message"
+				"severity": "warning"
 			},
 			"OPF_004a": {
 				"message": "Invalid prefix declaration: found empty prefix.",
-				"severity": "error",
-				"type": "message"
+				"severity": "error"
 			},
 			"OPF_004b": {
 				"message": "Invalid prefix \"%1$s\": must be a valid non-colonized name (aka \"NCName\").",
-				"severity": "error",
-				"type": "message"
+				"severity": "error"
 			},
 			"OPF_004c": {
 				"message": "Invalid prefix declaration: prefix \"%1$s\" must be immediately followed by a colon character (\":\").",
-				"severity": "error",
-				"type": "message"
+				"severity": "error"
 			},
 			"OPF_004d": {
 				"message": "Invalid prefix declaration: prefix \"%1$s\" must be separated by its URI with a space.",
-				"severity": "error",
-				"type": "message"
+				"severity": "error"
 			},
 			"OPF_004e": {
 				"message": "Invalid prefix declaration: found illegal whitespace between prefix and URI.",
-				"severity": "warning",
-				"type": "message"
+				"severity": "warning"
 			},
 			"OPF_004f": {
 				"message": "Invalid prefix declaration: found illegal whitespace between prefix mappings.",
-				"severity": "warning",
-				"type": "message"
+				"severity": "warning"
 			},
 			"OPF_005": {
 				"message": "Invalid prefix declaration: URI for prefix \"%1$s\" doesn’t exist.",
-				"severity": "error",
-				"type": "message"
+				"severity": "error"
 			},
 			"OPF_006": {
 				"message": "Invalid prefix declaration: URI \"%1$s\" is not a valid URI.",
-				"severity": "error",
-				"type": "message"
+				"severity": "error"
 			},
 			"OPF_007": {
 				"message": "Re-declaration of reserved prefix \"%1$s\".",
-				"severity": "warning",
-				"type": "message"
+				"severity": "warning"
 			},
 			"OPF_007a": {
 				"message": "Invalid prefix mapping: prefix \"_\" must not be declared.",
-				"severity": "error",
-				"type": "message"
+				"severity": "error"
 			},
 			"OPF_007b": {
 				"message": "Invalid prefix mapping: default vocabulary \"%1$s\" must not be re-declared.",
-				"severity": "warning",
-				"type": "message"
+				"severity": "warning"
 			},
 			"OPF_008": {
 				"message": "Handler binding for core Media-type \"%1$s\" is not allowed.",
-				"severity": "error",
-				"type": "message"
+				"severity": "error"
 			},
 			"OPF_009": {
 				"message": "The media-type \"%1$s\" has already been assigned a handler, with ID \"%2$s\".",
-				"severity": "error",
-				"type": "message"
+				"severity": "error"
 			},
 			"OPF_010": {
 				"message": "Error resolving reference: \"%1$s\".",
-				"severity": "error",
-				"type": "message"
+				"severity": "error"
 			},
 			"OPF_011": {
 				"message": "itemref can’t have both page-spread-right and page-spread-left properties.",
-				"severity": "error",
-				"type": "message"
+				"severity": "error"
 			},
 			"OPF_012": {
 				"message": "Item property \"%1$s\" is not defined for media type \"%2$s\".",
-				"severity": "error",
-				"type": "message"
+				"severity": "error"
 			},
 			"OPF_013": {
 				"message": "The type property \"%1$s\" on the object tag does not match the declared media-type \"%2$s\" in the OPF manifest.",
-				"severity": "error",
-				"type": "message"
+				"severity": "error"
 			},
 			"OPF_014": {
 				"message": "The property \"%1$s\" should be declared in the OPF file.",
-				"severity": "error",
-				"type": "message"
+				"severity": "error"
 			},
 			"OPF_015": {
 				"message": "The property \"%1$s\" should not be declared in the OPF file.",
-				"severity": "error",
-				"type": "message"
+				"severity": "error"
 			},
 			"OPF_016": {
 				"message": "The element \"rootfile\" is missing its required attribute \"full-path\".",
-				"severity": "error",
-				"type": "message"
+				"severity": "error"
 			},
 			"OPF_017": {
 				"message": "The attribute \"full-path\" on element \"rootfile\" must not be empty.",
-				"severity": "error",
-				"type": "message"
+				"severity": "error"
 			},
 			"OPF_018": {
 				"message": "The \"remote-resources\" property was declared in the Package Document, but no reference to remote resources has been found.",
-				"severity": "warning",
-				"type": "message"
+				"severity": "warning"
 			},
 			"OPF_018b": {
 				"message": "The \"remote-resources\" property was declared in the Package Document, but no reference to remote resources has been found; please check scripted content to make sure the property is legit.",
-				"severity": "usage",
-				"type": "message"
+				"severity": "usage"
 			},
 			"OPF_019": {
 				"message": "Spine tag was not found in the OPF file.",
-				"severity": "fatal",
-				"type": "message"
+				"severity": "fatal"
 			},
 			"OPF_020": {
 				"message": "Excessive number of spine items.",
-				"severity": "suppressed",
-				"type": "message"
+				"severity": "suppressed"
 			},
 			"OPF_021": {
 				"message": "Use of non-registered URI scheme type in href: \"%1$s\".",
-				"severity": "warning",
-				"type": "message"
+				"severity": "warning"
 			},
 			"OPF_025": {
 				"message": "Property value list \"%1$s\" is not allowed, only one value must be specified.",
-				"severity": "error",
-				"type": "message"
+				"severity": "error"
 			},
 			"OPF_026": {
 				"message": "Found malformed property value: \"%1$s\".",
-				"severity": "error",
-				"type": "message"
+				"severity": "error"
 			},
 			"OPF_027": {
 				"message": "Undefined property: \"%1$s\".",
-				"severity": "error",
-				"type": "message"
+				"severity": "error"
 			},
 			"OPF_028": {
 				"message": "Undeclared prefix: \"%1$s\".",
-				"severity": "error",
-				"type": "message"
+				"severity": "error"
 			},
 			"OPF_029": {
 				"message": "The file \"%1$s\" does not appear to match the media type %2$s, as specified in the OPF file.",
-				"severity": "error",
-				"type": "message"
+				"severity": "error"
 			},
 			"OPF_030": {
 				"message": "The unique-identifier \"%1$s\" was not found.",
-				"severity": "error",
-				"type": "message"
+				"severity": "error"
 			},
 			"OPF_031": {
 				"message": "File listed in reference element in guide was not declared in OPF manifest: %1$s.",
-				"severity": "error",
-				"type": "message"
+				"severity": "error"
 			},
 			"OPF_032": {
 				"message": "Guide references \"%1$s\" which is not a valid \"OPS Content Document\".",
-				"severity": "error",
-				"type": "message"
+				"severity": "error"
 			},
 			"OPF_033": {
 				"message": "The spine contains no linear resources.",
-				"severity": "error",
-				"type": "message"
+				"severity": "error"
 			},
 			"OPF_034": {
 				"message": "The spine contains multiple references to the manifest item with id \"%1$s\".",
-				"severity": "error",
-				"type": "message"
+				"severity": "error"
 			},
 			"OPF_035": {
 				"message": "Media type \"text/html\" is not appropriate for XHTML/OPS.",
 				"severity": "warning",
-				"type": "message"
-			},
-			"OPF_035_SUG": {
-				"message": "Use \"application/xhtml+xml\" instead.",
-				"type": "suggestion"
+				"suggestions": {
+					"OPF_035_SUG": "Use \"application/xhtml+xml\" instead."
+				}
 			},
 			"OPF_036": {
 				"message": "Video type \"%1$s\" might not be supported by reading systems",
 				"severity": "usage",
-				"type": "message"
-			},
-			"OPF_036_SUG": {
-				"message": "Use \"video/mp4\", \"video/h264\" or \"video/webm\" instead.",
-				"type": "suggestion"
+				"suggestions": {
+					"OPF_036_SUG": "Use \"video/mp4\", \"video/h264\" or \"video/webm\" instead."
+				}
 			},
 			"OPF_037": {
 				"message": "Found deprecated media-type \"%1$s\".",
-				"severity": "warning",
-				"type": "message"
+				"severity": "warning"
 			},
 			"OPF_038": {
 				"message": "Media type \"%1$s\" is not appropriate for an OEBPS 1.2 context; Use \"text/x-oeb1-document\" instead.",
-				"severity": "warning",
-				"type": "message"
+				"severity": "warning"
 			},
 			"OPF_039": {
 				"message": "Media-type \"%1$s\" is not appropriate in an OEBPS 1.2 context. Use \"text/x-oeb1-css\" instead.",
-				"severity": "warning",
-				"type": "message"
+				"severity": "warning"
 			},
 			"OPF_040": {
 				"message": "Fallback item could not be found.",
-				"severity": "error",
-				"type": "message"
+				"severity": "error"
 			},
 			"OPF_041": {
 				"message": "Fallback-style item could not be found.",
-				"severity": "error",
-				"type": "message"
+				"severity": "error"
 			},
 			"OPF_042": {
 				"message": "%1$s\" is not a permissible spine media-type.",
-				"severity": "error",
-				"type": "message"
+				"severity": "error"
 			},
 			"OPF_043": {
 				"message": "Spine item with non-standard media-type \"%1$s\" has no fallback.",
-				"severity": "error",
-				"type": "message"
+				"severity": "error"
 			},
 			"OPF_044": {
 				"message": "Spine item with non-standard media-type \"%1$s\" has a fallback to non-standard media-type.",
-				"severity": "error",
-				"type": "message"
+				"severity": "error"
 			},
 			"OPF_045": {
 				"message": "Encountered circular reference in fallback chain.",
-				"severity": "error",
-				"type": "message"
+				"severity": "error"
 			},
 			"OPF_046": {
 				"message": "Scripted property is not set on mediaType handler.",
-				"severity": "error",
-				"type": "message"
+				"severity": "error"
 			},
 			"OPF_047": {
 				"message": "OPF file is using OEBPS 1.2 syntax allowing backwards compatibility.",
-				"severity": "usage",
-				"type": "message"
+				"severity": "usage"
 			},
 			"OPF_048": {
 				"message": "Package tag is missing its required unique-identifier attribute and value.",
-				"severity": "error",
-				"type": "message"
+				"severity": "error"
 			},
 			"OPF_049": {
 				"message": "Item id \"%1$s\" was not found in the manifest.",
-				"severity": "error",
-				"type": "message"
+				"severity": "error"
 			},
 			"OPF_050": {
 				"message": "TOC attribute references resource with non-NCX mime type; \"application/x-dtbncx+xml\" is expected.",
-				"severity": "error",
-				"type": "message"
+				"severity": "error"
 			},
 			"OPF_051": {
 				"message": "Image dimensions exceed recommended size.",
-				"severity": "suppressed",
-				"type": "message"
+				"severity": "suppressed"
 			},
 			"OPF_052": {
 				"message": "Role value \"%1$s\" is not valid.",
-				"severity": "error",
-				"type": "message"
+				"severity": "error"
 			},
 			"OPF_053": {
 				"message": "Date value \"%1$s\" does not follow recommended syntax as per http://www.w3.org/TR/NOTE-datetime:%2$s.",
-				"severity": "warning",
-				"type": "message"
+				"severity": "warning"
 			},
 			"OPF_054": {
 				"message": "Date value \"%1$s\" is not valid as per http://www.w3.org/TR/NOTE-datetime:%2$s.",
-				"severity": "error",
-				"type": "message"
+				"severity": "error"
 			},
 			"OPF_055": {
 				"message": "%1$s tag is empty.",
-				"severity": "warning",
-				"type": "message"
+				"severity": "warning"
 			},
 			"OPF_056": {
 				"message": "Media type \"%1$s\" is not a core audio type.",
-				"severity": "usage",
-				"type": "message"
+				"severity": "usage"
 			},
 			"OPF_057": {
 				"message": "Image file length exceeds recommended size.",
-				"severity": "suppressed",
-				"type": "message"
+				"severity": "suppressed"
 			},
 			"OPF_058": {
 				"message": "Spine item \"%1$s\" is not referenced from the TOC in the Nav Doc.",
 				"severity": "usage",
-				"type": "message"
-			},
-			"OPF_058_SUG": {
-				"message": "Every spine item in the manifest should be referenced by at least one TOC entry in the Nav Doc.",
-				"type": "suggestion"
+				"suggestions": {
+					"OPF_058_SUG": "Every spine item in the manifest should be referenced by at least one TOC entry in the Nav Doc."
+				}
 			},
 			"OPF_059": {
 				"message": "Spine item \"%1$s\" is not referenced from the TOC in the NCX.",
 				"severity": "usage",
-				"type": "message"
-			},
-			"OPF_059_SUG": {
-				"message": "Every spine item in the manifest should be referenced by at least one TOC entry in the NCX file.",
-				"type": "suggestion"
+				"suggestions": {
+					"OPF_059_SUG": "Every spine item in the manifest should be referenced by at least one TOC entry in the NCX file."
+				}
 			},
 			"OPF_060": {
 				"message": "Duplicate entry in the ZIP file: \"%1$s\".",
-				"severity": "error",
-				"type": "message"
+				"severity": "error"
 			},
 			"OPF_061": {
 				"message": "Duplicate entry in the ZIP file (after Unicode NFC normalization) \"%1$s\".",
-				"severity": "warning",
-				"type": "message"
+				"severity": "warning"
 			},
 			"OPF_062": {
 				"message": "Found Adobe page-map attribute on spine element in opf file.",
-				"severity": "usage",
-				"type": "message"
+				"severity": "usage"
 			},
 			"OPF_063": {
 				"message": "Referenced Adobe page-map item \"%1$s\" was not found in the manifest.",
-				"severity": "warning",
-				"type": "message"
+				"severity": "warning"
 			},
 			"OPF_064": {
 				"message": "OPF declares type \"%1$s\", validating using profile \"%2$s\".",
-				"severity": "info",
-				"type": "message"
+				"severity": "info"
 			},
 			"OPF_065": {
 				"message": "Invalid metadata declaration, probably due to a cycle in \"refines\" metadata.",
-				"severity": "error",
-				"type": "message"
+				"severity": "error"
 			},
 			"OPF_066": {
 				"message": "Missing \"dc:source\" or \"source-of\" pagination metadata. The pagination source must be identified using the \"dc:source\" and \"source-of\" properties when the content includes page break markers.",
-				"severity": "error",
-				"type": "message"
+				"severity": "error"
 			},
 			"OPF_067": {
 				"message": "The resource \"%1$s\" must not be listed both as  a \"link\" element in the package metadata and as a manifest item.",
-				"severity": "error",
-				"type": "message"
+				"severity": "error"
 			},
 			"OPF_068": {
 				"message": "Unknown collection role \"%1$s\".",
-				"severity": "error",
-				"type": "message"
+				"severity": "error"
 			},
 			"OPF_069": {
 				"message": "Custom collection role URI \"%1$s\" must not include the string \"idpf.org\" in its host component.",
-				"severity": "error",
-				"type": "message"
+				"severity": "error"
 			},
 			"OPF_070": {
 				"message": "Custom collection role \"%1$s\" is an invalid URI.",
-				"severity": "warning",
-				"type": "message"
+				"severity": "warning"
 			},
 			"OPF_071": {
 				"message": "Index collections must only contain resources pointing to XHTML Content Documents.",
-				"severity": "error",
-				"type": "message"
+				"severity": "error"
 			},
 			"OPF_072": {
 				"message": "Metadata element \"%1$s\" is empty.",
-				"severity": "usage",
-				"type": "message"
+				"severity": "usage"
 			},
 			"OPF_073": {
 				"message": "External identifiers must not appear in the document type declaration.",
-				"severity": "error",
-				"type": "message"
+				"severity": "error"
 			},
 			"OPF_074": {
 				"message": "Package resource \"%1$s\" is declared in several manifest item.",
-				"severity": "error",
-				"type": "message"
+				"severity": "error"
 			},
 			"OPF_075": {
 				"message": "Preview collections must only point to EPUB Content Documents.",
-				"severity": "error",
-				"type": "message"
+				"severity": "error"
 			},
 			"OPF_076": {
 				"message": "The URI of preview collections link elements must not include EPUB canonical fragment identifiers.",
-				"severity": "error",
-				"type": "message"
+				"severity": "error"
 			},
 			"OPF_077": {
 				"message": "A Data Navigation Document should not be included in the spine.",
-				"severity": "warning",
-				"type": "message"
+				"severity": "warning"
 			},
 			"OPF_078": {
 				"message": "An EPUB Dictionary must contain at least one Content Document with dictionary content (epub:type \"dictionary\").",
-				"severity": "error",
-				"type": "message"
+				"severity": "error"
 			},
 			"OPF_079": {
 				"message": "Dictionary content was found (epub:type \"dictionary\"), the Package Document should declare the dc:type \"dictionary\".",
-				"severity": "warning",
-				"type": "message"
+				"severity": "warning"
 			},
 			"OPF_080": {
 				"message": "A Search Key Map document file name should have the extension \".xml\".",
-				"severity": "warning",
-				"type": "message"
+				"severity": "warning"
 			},
 			"OPF_081": {
 				"message": "Resource \"%1$s\" (referenced from an EPUB Dictionary collection) was not found.",
-				"severity": "error",
-				"type": "message"
+				"severity": "error"
 			},
 			"OPF_082": {
 				"message": "Found an EPUB Dictionary collection containing more than one Search Key Map Document.",
-				"severity": "error",
-				"type": "message"
+				"severity": "error"
 			},
 			"OPF_083": {
 				"message": "Found an EPUB Dictionary collection containing no Search Key Map Document.",
-				"severity": "error",
-				"type": "message"
+				"severity": "error"
 			},
 			"OPF_084": {
 				"message": "Found an EPUB Dictionary collection containing resource \"%1$s\" which is neither a Search Key Map Document nor an XHTML Content Document.",
-				"severity": "error",
-				"type": "message"
+				"severity": "error"
 			},
 			"OPF_085": {
 				"message": "dc:identifier\" value \"%1$s\" is marked as a UUID, but is an invalid UUID.",
-				"severity": "warning",
-				"type": "message"
+				"severity": "warning"
 			},
 			"OPF_086": {
 				"message": "Property \"%1$s\" is deprecated. Consider using %2$s instead.",
 				"severity": "warning",
-				"type": "message"
-			},
-			"OPF_086_SUG.default": {
-				"message": "a custom prefixed property",
-				"type": "suggestion"
-			},
-			"OPF_086_SUG.marc21xml-record": {
-				"message": "the \"record\" keyword and the media-type \"application/marcxml+xml\"",
-				"type": "suggestion"
-			},
-			"OPF_086_SUG.mods-record": {
-				"message": "the \"record\" keyword and the media-type \"application/mods+xml\"",
-				"type": "suggestion"
-			},
-			"OPF_086_SUG.onix-record": {
-				"message": "the \"record\" keyword with the properties attribute value \"onix\"",
-				"type": "suggestion"
-			},
-			"OPF_086_SUG.xml-signature": {
-				"message": "no signature-identifying link",
-				"type": "suggestion"
-			},
-			"OPF_086_SUG.xmp-record": {
-				"message": "the \"record\" keyword with the properties attribute value \"xmp\"",
-				"type": "suggestion"
+				"suggestions": {
+					"OPF_086_SUG.default": "a custom prefixed property",
+					"OPF_086_SUG.marc21xml-record": "the \"record\" keyword and the media-type \"application/marcxml+xml\"",
+					"OPF_086_SUG.mods-record": "the \"record\" keyword and the media-type \"application/mods+xml\"",
+					"OPF_086_SUG.onix-record": "the \"record\" keyword with the properties attribute value \"onix\"",
+					"OPF_086_SUG.xml-signature": "no signature-identifying link",
+					"OPF_086_SUG.xmp-record": "the \"record\" keyword with the properties attribute value \"xmp\""
+				}
 			},
 			"OPF_086b": {
 				"message": "epub:type value \"%1$s\" is deprecated. Consider using %2$s instead.",
 				"severity": "usage",
-				"type": "message"
-			},
-			"OPF_086b_SUG.default": {
-				"message": "a custom prefixed value",
-				"type": "suggestion"
-			},
-			"OPF_086b_SUG.annoref": {
-				"message": "open annotations",
-				"type": "suggestion"
-			},
-			"OPF_086b_SUG.annotation": {
-				"message": "open annotations",
-				"type": "suggestion"
-			},
-			"OPF_086b_SUG.help": {
-				"message": "the \"tip\" property",
-				"type": "suggestion"
-			},
-			"OPF_086b_SUG.marginalia": {
-				"message": "a bare \"aside\" element",
-				"type": "suggestion"
-			},
-			"OPF_086b_SUG.note": {
-				"message": "a \"footnote\" or \"endnote\" property",
-				"type": "suggestion"
-			},
-			"OPF_086b_SUG.rearnote": {
-				"message": "the \"endnote\" property",
-				"type": "suggestion"
-			},
-			"OPF_086b_SUG.rearnotes": {
-				"message": "the \"endnotes\" property",
-				"type": "suggestion"
-			},
-			"OPF_086b_SUG.sidebar": {
-				"message": "a bare \"aside\" element",
-				"type": "suggestion"
-			},
-			"OPF_086b_SUG.warning": {
-				"message": "the \"notice\" property",
-				"type": "suggestion"
+				"suggestions": {
+					"OPF_086b_SUG.default": "a custom prefixed value",
+					"OPF_086b_SUG.annoref": "open annotations",
+					"OPF_086b_SUG.annotation": "open annotations",
+					"OPF_086b_SUG.help": "the \"tip\" property",
+					"OPF_086b_SUG.marginalia": "a bare \"aside\" element",
+					"OPF_086b_SUG.note": "a \"footnote\" or \"endnote\" property",
+					"OPF_086b_SUG.rearnote": "the \"endnote\" property",
+					"OPF_086b_SUG.rearnotes": "the \"endnotes\" property",
+					"OPF_086b_SUG.sidebar": "a bare \"aside\" element",
+					"OPF_086b_SUG.warning": "the \"notice\" property"
+				}
 			},
 			"OPF_087": {
 				"message": "epub:type value \"%1$s\" is not allowed on documents of type \"%2$s\".",
-				"severity": "usage",
-				"type": "message"
+				"severity": "usage"
 			},
 			"OPF_088": {
 				"message": "Unrecognized epub:type value \"%1$s\".",
-				"severity": "usage",
-				"type": "message"
+				"severity": "usage"
 			},
 			"OPF_089": {
 				"message": "The \"alternate\" link rel keyword cannot be paired with other keywords.",
-				"severity": "error",
-				"type": "message"
+				"severity": "error"
 			},
 			"OPF_090": {
 				"message": "It is encouraged to use MIME media type \"%1$s\" instead of \"%2$s\".",
-				"severity": "usage",
-				"type": "message"
+				"severity": "usage"
 			}
 		}
 	},
@@ -1296,125 +1037,100 @@
 		"messages": {
 			"PKG_001": {
 				"message": "Validating the EPUB against version %1$s but detected version %2$s.",
-				"severity": "warning",
-				"type": "message"
+				"severity": "warning"
 			},
 			"PKG_003": {
 				"message": "Unable to read EPUB file header. This is likely a corrupted EPUB file.",
-				"severity": "error",
-				"type": "message"
+				"severity": "error"
 			},
 			"PKG_004": {
 				"message": "Corrupted EPUB ZIP header.",
-				"severity": "fatal",
-				"type": "message"
+				"severity": "fatal"
 			},
 			"PKG_005": {
 				"message": "The mimetype file has an extra field of length %1$s. The use of the extra field feature of the ZIP format is not permitted for the mimetype file.",
-				"severity": "error",
-				"type": "message"
+				"severity": "error"
 			},
 			"PKG_006": {
 				"message": "Mimetype file entry is missing or is not the first file in the archive.",
-				"severity": "error",
-				"type": "message"
+				"severity": "error"
 			},
 			"PKG_007": {
 				"message": "Mimetype file should only contain the string \"application/epub+zip\" and should not be compressed.",
-				"severity": "error",
-				"type": "message"
+				"severity": "error"
 			},
 			"PKG_008": {
 				"message": "Unable to read file \"%1$s\".",
-				"severity": "fatal",
-				"type": "message"
+				"severity": "fatal"
 			},
 			"PKG_009": {
 				"message": "File name contains characters that are not allowed in OCF file names: \"%1$s\".",
-				"severity": "error",
-				"type": "message"
+				"severity": "error"
 			},
 			"PKG_010": {
 				"message": "Filename contains spaces, therefore URI escaping is necessary. Consider removing spaces from filename.",
-				"severity": "warning",
-				"type": "message"
+				"severity": "warning"
 			},
 			"PKG_011": {
 				"message": "Filename is not allowed to end with \".\".",
-				"severity": "error",
-				"type": "message"
+				"severity": "error"
 			},
 			"PKG_012": {
 				"message": "File name contains the following non-ascii characters: %1$s. Consider changing the filename.",
-				"severity": "usage",
-				"type": "message"
+				"severity": "usage"
 			},
 			"PKG_013": {
 				"message": "The EPUB file includes multiple OPS renditions.",
-				"severity": "error",
-				"type": "message"
+				"severity": "error"
 			},
 			"PKG_014": {
 				"message": "The EPUB contains empty directory \"%1$s\".",
-				"severity": "warning",
-				"type": "message"
+				"severity": "warning"
 			},
 			"PKG_015": {
 				"message": "Unable to read EPUB contents: %1$s",
-				"severity": "fatal",
-				"type": "message"
+				"severity": "fatal"
 			},
 			"PKG_016": {
 				"message": "Use only lowercase characters for the EPUB file extension for maximum compatibility.",
 				"severity": "warning",
-				"type": "message"
-			},
-			"PKG_016_SUG": {
-				"message": "For maximum compatibility, use \".epub\".",
-				"type": "suggestion"
+				"suggestions": {
+					"PKG_016_SUG": "For maximum compatibility, use \".epub\"."
+				}
 			},
 			"PKG_017": {
 				"message": "Uncommon EPUB file extension.",
 				"severity": "warning",
-				"type": "message"
-			},
-			"PKG_017_SUG": {
-				"message": "For maximum compatibility, use \".epub\".",
-				"type": "suggestion"
+				"suggestions": {
+					"PKG_017_SUG": "For maximum compatibility, use \".epub\"."
+				}
 			},
 			"PKG_018": {
 				"message": "The EPUB file could not be found.",
-				"severity": "fatal",
-				"type": "message"
+				"severity": "fatal"
 			},
 			"PKG_020": {
 				"message": "OPF file \"%1$s\" could not be found.",
-				"severity": "error",
-				"type": "message"
+				"severity": "error"
 			},
 			"PKG_021": {
 				"message": "Corrupted image file encountered.",
-				"severity": "error",
-				"type": "message"
+				"severity": "error"
 			},
 			"PKG_022": {
 				"message": "Wrong file extension for image. The image is a \"%1$s\" file but has the file extension \"%2$s\".",
-				"severity": "warning",
-				"type": "message"
+				"severity": "warning"
 			},
 			"PKG_023": {
 				"message": "Validating the EPUB against version 2.0, default validation profile will be used.",
-				"severity": "usage",
-				"type": "message"
+				"severity": "usage"
 			},
 			"PKG_024": {
 				"message": "Uncommon EPUB file extension.",
 				"severity": "info",
-				"type": "message"
-			},
-			"PKG_024_SUG": {
-				"message": "For maximum compatibility, use \".epub\".",
-				"type": "suggestion"
+				"suggestions": {
+					"PKG_024_SUG": "For maximum compatibility, use \".epub\"."
+				}
 			}
 		}
 	},
@@ -1423,128 +1139,103 @@
 		"messages": {
 			"RSC_001": {
 				"message": "File \"%1$s\" could not be found.",
-				"severity": "error",
-				"type": "message"
+				"severity": "error"
 			},
 			"RSC_002": {
 				"message": "Required META-INF/container.xml resource could not be found.",
-				"severity": "fatal",
-				"type": "message"
+				"severity": "fatal"
 			},
 			"RSC_003": {
 				"message": "No rootfile tag with media type \"application/oebps-package+xml\" was found in the container.",
-				"severity": "error",
-				"type": "message"
+				"severity": "error"
 			},
 			"RSC_004": {
 				"message": "File \"%1$s\" could not be decrypted.",
-				"severity": "info",
-				"type": "message"
+				"severity": "info"
 			},
 			"RSC_005": {
 				"message": "Error while parsing file: %1$s",
-				"severity": "error",
-				"type": "message"
+				"severity": "error"
 			},
 			"RSC_006": {
 				"message": "Remote resource reference not allowed; resource must be placed in the OCF.",
-				"severity": "error",
-				"type": "message"
+				"severity": "error"
 			},
 			"RSC_006b": {
 				"message": "Resource \"%1$s\" is located outside the EPUB Container; please check the resource is retrieved in scripted content.",
-				"severity": "usage",
-				"type": "message"
+				"severity": "usage"
 			},
 			"RSC_007": {
 				"message": "Referenced resource \"%1$s\" could not be found in the EPUB.",
-				"severity": "error",
-				"type": "message"
+				"severity": "error"
 			},
 			"RSC_007w": {
 				"message": "Referenced resource \"%1$s\" could not be found in the EPUB.",
-				"severity": "warning",
-				"type": "message"
+				"severity": "warning"
 			},
 			"RSC_008": {
 				"message": "Referenced resource \"%1$s\" is not declared in the OPF manifest.",
-				"severity": "error",
-				"type": "message"
+				"severity": "error"
 			},
 			"RSC_009": {
 				"message": "A non-SVG image resource should not be defined with a fragment identifier.",
-				"severity": "warning",
-				"type": "message"
+				"severity": "warning"
 			},
 			"RSC_010": {
 				"message": "Reference to non-standard resource type found.",
-				"severity": "error",
-				"type": "message"
+				"severity": "error"
 			},
 			"RSC_011": {
 				"message": "Found a reference to a resource that is not a spine item.",
-				"severity": "error",
-				"type": "message"
+				"severity": "error"
 			},
 			"RSC_012": {
 				"message": "Fragment identifier is not defined.",
-				"severity": "error",
-				"type": "message"
+				"severity": "error"
 			},
 			"RSC_013": {
 				"message": "Fragment identifier is used in a reference to a stylesheet resource.",
-				"severity": "error",
-				"type": "message"
+				"severity": "error"
 			},
 			"RSC_014": {
 				"message": "Fragment identifier defines an incompatible resource type.",
-				"severity": "error",
-				"type": "message"
+				"severity": "error"
 			},
 			"RSC_015": {
 				"message": "A fragment identifier is required for svg use tag references.",
-				"severity": "error",
-				"type": "message"
+				"severity": "error"
 			},
 			"RSC_016": {
 				"message": "Fatal Error while parsing file: %1$s",
-				"severity": "fatal",
-				"type": "message"
+				"severity": "fatal"
 			},
 			"RSC_017": {
 				"message": "Warning while parsing file: %1$s",
-				"severity": "warning",
-				"type": "message"
+				"severity": "warning"
 			},
 			"RSC_018": {
 				"message": "Alternative image file \"%1$s\" could not be found.",
-				"severity": "warning",
-				"type": "message"
+				"severity": "warning"
 			},
 			"RSC_019": {
 				"message": "EPUBs with Multiple Renditions should contain a META-INF/metadata.xml file.",
-				"severity": "warning",
-				"type": "message"
+				"severity": "warning"
 			},
 			"RSC_020": {
 				"message": "%1$s\" is not a valid URI.",
-				"severity": "error",
-				"type": "message"
+				"severity": "error"
 			},
 			"RSC_021": {
 				"message": "A Search Key Map Document must point to Content Documents (\"%1$s\" was not found in the spine).",
-				"severity": "error",
-				"type": "message"
+				"severity": "error"
 			},
 			"RSC_022": {
 				"message": "Cannot check image details (requires Java version 7 or higher).",
-				"severity": "info",
-				"type": "message"
+				"severity": "info"
 			},
 			"RSC_023": {
 				"message": "Couldn’t parse host of URL \"%1$s\" (probably due to disallowed characters or missing slashes after the protocol)",
-				"severity": "warning",
-				"type": "message"
+				"severity": "warning"
 			}
 		}
 	},
@@ -1553,65 +1244,52 @@
 		"messages": {
 			"SCP_001": {
 				"message": "Use of Javascript eval() function in EPUB scripts is a security risk.",
-				"severity": "usage",
-				"type": "message"
+				"severity": "usage"
 			},
 			"SCP_002": {
 				"message": "Use of XMLHttpRequest in EPUB scripts is a security risk.",
-				"severity": "usage",
-				"type": "message"
+				"severity": "usage"
 			},
 			"SCP_003": {
 				"message": "Local and Session Storage is not currently supported.",
-				"severity": "usage",
-				"type": "message"
+				"severity": "usage"
 			},
 			"SCP_004": {
 				"message": "Content file contains script which is not supported in EPUB v2.",
-				"severity": "error",
-				"type": "message"
+				"severity": "error"
 			},
 			"SCP_005": {
 				"message": "Content file contains script but it is not marked as scripted.",
-				"severity": "suppressed",
-				"type": "message"
+				"severity": "suppressed"
 			},
 			"SCP_006": {
 				"message": "Inline scripts found.",
-				"severity": "usage",
-				"type": "message"
+				"severity": "usage"
 			},
 			"SCP_007": {
 				"message": "Script references \"innerHtml\".",
 				"severity": "usage",
-				"type": "message"
-			},
-			"SCP_007_SUG": {
-				"message": "Use a DOM instead.",
-				"type": "suggestion"
+				"suggestions": {
+					"SCP_007_SUG": "Use a DOM instead."
+				}
 			},
 			"SCP_008": {
 				"message": "Script references \"innerText\".",
 				"severity": "usage",
-				"type": "message"
-			},
-			"SCP_008_SUG": {
-				"message": "Use \"textContent\" instead.",
-				"type": "suggestion"
+				"suggestions": {
+					"SCP_008_SUG": "Use \"textContent\" instead."
+				}
 			},
 			"SCP_009": {
 				"message": "Content file uses mouse event handlers.",
 				"severity": "usage",
-				"type": "message"
-			},
-			"SCP_009_SUG": {
-				"message": "Ensure that all mouse driven functionality is accessible from the keyboard and touch devices.",
-				"type": "suggestion"
+				"suggestions": {
+					"SCP_009_SUG": "Ensure that all mouse driven functionality is accessible from the keyboard and touch devices."
+				}
 			},
 			"SCP_010": {
 				"message": "Epub 3 content file contains script.",
-				"severity": "usage",
-				"type": "message"
+				"severity": "usage"
 			}
 		}
 	}
