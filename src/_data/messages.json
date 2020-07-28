@@ -5,12 +5,14 @@
 			"ACC_001": {
 				"message": "\"img\" or \"area\" HTML element has no \"alt\" attribute.",
 				"severity": "usage",
-				"type": "message"
+				"type": "message",
+				"references": ["https://www.w3.org/TR/UNDERSTANDING-WCAG20/text-equiv-all.html"]
 			},
 			"ACC_002": {
 				"message": "\"input\" HTML element is not referenced by a corresponding label element.",
 				"severity": "usage",
-				"type": "message"
+				"type": "message",
+				"references": ["https://www.w3.org/TR/UNDERSTANDING-WCAG20/minimize-error-cues.html"]
 			},
 			"ACC_003": {
 				"message": "Non-text html elements should include a \"title\" attribute for accessibility.",
@@ -40,12 +42,14 @@
 			"ACC_008": {
 				"message": "Navigation Document has no \"landmarks nav\" element.",
 				"severity": "usage",
-				"type": "message"
+				"type": "message",
+				"references": ["https://www.w3.org/publishing/epub3/epub-packages.html#sec-nav-landmarks"]
 			},
 			"ACC_009": {
 				"message": "MathML should either have an \"alttext\" attribute or \"annotation-xml\" child element.",
 				"severity": "usage",
-				"type": "message"
+				"type": "message",
+				"references": ["https://www.w3.org/TR/UNDERSTANDING-WCAG20/text-equiv-all.html"]
 			},
 			"ACC_010": {
 				"message": "Headings should not be used within blockquote and figure elements.",
@@ -55,7 +59,8 @@
 			"ACC_011": {
 				"message": "SVG hyperlinks should have a human-readable title (using the \"title\" child element or the \"xlink:title\" attribute).",
 				"severity": "warning",
-				"type": "message"
+				"type": "message",
+				"references": ["https://www.w3.org/TR/UNDERSTANDING-WCAG20/text-equiv-all.html"]
 			},
 			"ACC_012": {
 				"message": "Table elements should include a caption element.",
@@ -74,7 +79,8 @@
 			"ACC_014": {
 				"message": "Value of CSS property \"font-size\" does not use a relative size: \"%1$s\"",
 				"severity": "usage",
-				"type": "message"
+				"type": "message",
+				"references": ["https://www.w3.org/TR/UNDERSTANDING-WCAG20/visual-audio-contrast-visual-presentation.html"]
 			},
 			"ACC_014_SUG": {
 				"message": "Acceptable values include percentages, em multiples, \"larger\", \"smaller\", \"normal\" or \"inherit\".",
@@ -83,7 +89,9 @@
 			"ACC_015": {
 				"message": "Value of CSS property \"line-height\" does not use a relative size.",
 				"severity": "usage",
-				"type": "message"
+				"type": "message",
+				"references": [],
+				"references": ["https://www.w3.org/TR/UNDERSTANDING-WCAG20/visual-audio-contrast-visual-presentation.html"]
 			},
 			"ACC_015_SUG": {
 				"message": "Acceptable values include percentages, numeric multiples, em multiples, \"normal\", or \"inherit\".",
@@ -92,7 +100,8 @@
 			"ACC_016": {
 				"message": "Value of CSS property \"font-size\" should use a relative size: \"%1$s\"",
 				"severity": "usage",
-				"type": "message"
+				"type": "message",
+				"references": ["https://www.w3.org/TR/UNDERSTANDING-WCAG20/visual-audio-contrast-visual-presentation.html"]
 			},
 			"ACC_016_SUG": {
 				"message": "Acceptable values include percentages, em multiples, \"larger\", \"smaller\", \"normal\" or \"inherit\".",
@@ -101,7 +110,8 @@
 			"ACC_017": {
 				"message": "Value of CSS property \"line-height\" does not use a relative size.",
 				"severity": "usage",
-				"type": "message"
+				"type": "message",
+				"references": ["https://www.w3.org/TR/UNDERSTANDING-WCAG20/visual-audio-contrast-visual-presentation.html"]
 			},
 			"ACC_017_SUG": {
 				"message": "Acceptable values include percentages, numeric multiples, em multiples, \"normal\", or \"inherit\".",
