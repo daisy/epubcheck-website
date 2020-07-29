@@ -1,6 +1,7 @@
 {
 	"ACC": {
 		"area": "Accessibility",
+		"introduction": "These messages concern potential problems of accessibility of content by print impaired people.",
 		"messages": {
 			"ACC_001": {
 				"message": "\"img\" or \"area\" HTML element has no \"alt\" attribute.",
@@ -126,6 +127,7 @@
 	},
 	"CHK": {
 		"area": "Checker Errors",
+		"introduction": "These messages are about parsing errors of files passed to EPUBcheck to customize the severity and checks' messages. Files can be supplied using `-c` or `--customMessages` and `-l` or `--listChecks` arguments.",
 		"messages": {
 			"CHK_001": {
 				"message": "The custom message overrides file was not found.",
@@ -163,22 +165,30 @@
 	},
 	"CSS": {
 		"area": "CSS",
+		"introduction": "These messages are alerts about Cascading Style Sheets in the checked EPUB.",
 		"messages": {
 			"CSS_001": {
 				"message": "The \"%1$s\" property must not be included in an EPUB Style Sheet.",
-				"severity": "error"
+				"severity": "error",
+				"references": ["https://www.w3.org/publishing/epub32/epub-contentdocs.html#sec-css-content-conf"],
+				"explanation": "EPUB specifications says authors must not use the direction and unicode-bidi CSS properties. Use the HTML dir attribute to set the inline base direction, use bdo elements and dir attributes to control bidirectionality."
 			},
 			"CSS_002": {
 				"message": "Empty or NULL reference found.",
-				"severity": "error"
+				"severity": "error",
+				"explanation": "A reference in the CSS code is empty or null. It could be an unset URL reference, e.g. `url('')` or `url()`."
 			},
 			"CSS_003": {
 				"message": "Only UTF-8 and UTF-16 encodings are allowed, detected %1$s.",
-				"severity": "error"
+				"severity": "error",
+				"references": ["https://www.w3.org/publishing/epub32/epub-contentdocs.html#sec-css-content-conf"],
+				"explanation": "Check the encoding of the CSS file and transform it into UTF-8 or UTF-16 if necessary."
 			},
 			"CSS_004": {
 				"message": "Only UTF-8 and UTF-16 encodings are allowed, detected %1$s BOM.",
-				"severity": "error"
+				"severity": "error",
+				"references": ["https://www.w3.org/publishing/epub32/epub-contentdocs.html#sec-css-content-conf"],
+				"explanation": "Check the encoding of the CSS file and transform it into UTF-8 or UTF-16 if necessary."
 			},
 			"CSS_005": {
 				"message": "Conflicting alternate style attributes found: %1$s.",
@@ -186,23 +196,30 @@
 			},
 			"CSS_006": {
 				"message": "CSS selector specifies fixed position.",
-				"severity": "usage"
+				"severity": "usage",
+				"references": ["https://www.w3.org/publishing/epub32/epub-contentdocs.html#issue-container-generatedID-13"]
 			},
 			"CSS_007": {
 				"message": "Font-face reference \"%1$s\" refers to non-standard font type \"%2$s\".",
-				"severity": "info"
+				"severity": "info",
+				"references": ["https://www.w3.org/publishing/epub32/epub-spec.html#tbl-core-media-types"],
+				"explanation": "Font core-types are \"TrueType\", \"OpenType\", \"WOFF\" and \"WOFF2\""
 			},
 			"CSS_008": {
 				"message": "An error occurred while parsing the CSS: %1$s.",
-				"severity": "error"
+				"severity": "error",
+				"explanation": "The file seems to have some problems that prevent it from being read or parsed."
 			},
 			"CSS_009": {
 				"message": "Use of certain CSS such as Columns, Transforms, Transitions, box-sizing or KeyFrames can cause pagination issues.",
-				"severity": "usage"
+				"severity": "usage",
+				"references": ["https://www.w3.org/publishing/epub32/epub-contentdocs.html#issue-container-generatedID-13"]
 			},
 			"CSS_010": {
 				"message": "Stylesheet of type other than \"text/css\" must have a fallback.",
-				"severity": "error"
+				"severity": "error",
+				"references": ["https://www.w3.org/publishing/epub32/epub-spec.html#sec-foreign-restrictions"],
+				"explanation": "For other types of style sheets other than CSS (e.g. XPGT), a CSS fallback must be provided."
 			},
 			"CSS_011": {
 				"message": "Excessive number of css files.",
@@ -221,7 +238,9 @@
 			},
 			"CSS_015": {
 				"message": "Alternate Stylesheet has no title.",
-				"severity": "error"
+				"severity": "error",
+				"references": ["https://www.w3.org/TR/html52/links.html#link-type-stylesheet"],
+				"explanation": "Alternative style sheets must have a title to be identified."
 			},
 			"CSS_016": {
 				"message": "Alternate Stylesheet precedes primary stylesheet.",
@@ -229,25 +248,30 @@
 			},
 			"CSS_017": {
 				"message": "CSS selector specifies absolute position.",
-				"severity": "usage"
+				"severity": "usage",
+				"references": ["https://www.w3.org/publishing/epub32/epub-contentdocs.html#issue-container-generatedID-13"]
 			},
 			"CSS_019": {
 				"message": "CSS font-face declaration has no attributes.",
-				"severity": "warning"
+				"severity": "warning",
+				"references": ["https://www.w3.org/TR/css-fonts-3/#font-face-rule"],
+				"explanation": "The declaration `@font-face` should contain at least the descriptors `font-family` and `src`."
 			},
 			"CSS_020": {
 				"message": "CSS font selector declaration uses unexpected font-size value \"%1$s\".",
 				"severity": "error",
 				"suggestions": {
 					"CSS_020_SUG": "Acceptable values include percentages, em multiples, \"larger\", \"smaller\", \"normal\" or \"inherit\"."
-				}
+				},
+				"references": ["https://www.w3.org/TR/css-fonts-3/#font-size-prop"]
 			},
 			"CSS_021": {
 				"message": "Shorthand CSS property \"font-family\" specifies an invalid System Font.",
 				"severity": "usage",
 				"suggestions": {
 					"CSS_021_SUG": "Acceptable values include \"caption\", \"icon\", \"menu\", \"message-box\", \"small-caption\",  \"status-bar\", or \"inherit\"."
-				}
+				},
+				"references": ["https://www.w3.org/TR/css-fonts-3/#font-prop"]
 			},
 			"CSS_022": {
 				"message": "CSS selector specifies global margin setting.",
