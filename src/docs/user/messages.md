@@ -6,9 +6,12 @@ title: Messages
 [//]: # "You can find it src/_data/messages.json"
 [//]: # "You can check the script that compiles the list in the file src/_data/messages.js"
 
+{% for area in messages %}
+## {{ area[1].area }}
+{{ area[1].introduction }}
 | Code | Message | Severity | Explanation | Documentation references |
 |------|---------|----------|-------------|--------------------------|
-{% for area in messages %}{% for message in area[1].messages %}{% if message[1].severity != "suppressed" %}| {{ message[0] }} | {{ message[1].message }} | <span class="severity {{ message[1].severity }}">{{ message[1].severity }}</span> | {{ message[1].explanation }} | {% if message[1].references %}{{ message[1].references | join: ", " }}{% endif %} |
+{% for message in area[1].messages %}{% if message[1].severity != "suppressed" %}| {{ message[0] }} | {{ message[1].message }} | <span class="severity {{ message[1].severity }}">{{ message[1].severity }}</span> | {{ message[1].explanation }} {% if message[1].suggestions %}*Suggestions*: <ul>{% for suggestion in message[1].suggestions %}<li>{{ suggestion[1] }}</li>{% endfor %}</ul>{% endif %} | {% if message[1].references %}{{ message[1].references | join: ", " }}{% endif %} |
 {% endif %}{% endfor %}{% endfor %}
 <style>
 	.severity {
