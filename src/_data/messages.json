@@ -306,11 +306,13 @@
 		"messages": {
 			"HTM_001": {
 				"message": "Any publication resource that is an XML-based media type must be a valid XML 1.0 document. XML version found: %1$s.",
-				"severity": "error"
+				"severity": "error",
+				"references": ["https://www.w3.org/publishing/epub32/epub-spec.html#sec-xml-constraints"]
 			},
 			"HTM_002": {
 				"message": "The installed xml parser doesn’t support xml version verification. Xml files must be a valid XML 1.0 document.",
-				"severity": "warning"
+				"severity": "warning",
+				"references": ["https://www.w3.org/publishing/epub32/epub-spec.html#sec-xml-constraints"]
 			},
 			"HTM_003": {
 				"message": "External entities are not allowed in EPUB v3 documents. External entity declaration found: %1$s.",
@@ -330,7 +332,8 @@
 			},
 			"HTM_007": {
 				"message": "Empty or whitespace-only value of attribute ssml:ph.",
-				"severity": "warning"
+				"severity": "warning",
+				"references": ["https://www.w3.org/publishing/epub32/epub-contentdocs.html#sec-cd-ssml-ph-attrib"]
 			},
 			"HTM_008": {
 				"message": "The src attribute is required.",
@@ -365,7 +368,8 @@
 			},
 			"HTM_014a": {
 				"message": "XHTML Content Document file name \"%1$s\" should have the extension \".xhtml\".",
-				"severity": "warning"
+				"severity": "warning",
+				"references": ["https://www.w3.org/publishing/epub32/epub-contentdocs.html#confreq-cd-xhtml-fileprops-name"]
 			},
 			"HTM_015": {
 				"message": "HTML4 DOCTYPE definition within EPUB v3.",
@@ -377,7 +381,8 @@
 			},
 			"HTM_017": {
 				"message": "Content file has different language value in attributes xml:lang and lang.",
-				"severity": "error"
+				"severity": "error",
+				"references": ["https://html.spec.whatwg.org/multipage/dom.html#the-lang-and-xml:lang-attributes"]
 			},
 			"HTM_018": {
 				"message": "Content file has invalid language value at attribute xml:lang.",
@@ -469,25 +474,29 @@
 				"severity": "error",
 				"suggestions": {
 					"HTM_046_SUG": "A viewport declaration is required for fixed format items."
-				}
+				},
+				"references": ["https://www.w3.org/publishing/epub32/epub-contentdocs.html#sec-fxl-icb-html"]
 			},
 			"HTM_047": {
 				"message": "Html viewport is missing height and/or width.",
 				"severity": "error",
 				"suggestions": {
 					"HTM_047_SUG": "The viewport declaration must declare both width and height."
-				}
+				},
+				"references": ["https://www.w3.org/publishing/epub32/epub-contentdocs.html#sec-fxl-icb-html"]
 			},
 			"HTM_048": {
 				"message": "SVG Fixed-Layout Documents must have a \"viewBox\" attribute (on the outermost \"svg\" element).",
-				"severity": "error"
+				"severity": "error",
+				"references": ["https://www.w3.org/publishing/epub32/epub-contentdocs.html#sec-fxl-icb-svg"]
 			},
 			"HTM_049": {
 				"message": "Html element does not have an xmlns set to \"http://www.w3.org/1999/xhtml\".",
 				"severity": "error",
 				"suggestions": {
 					"HTM_049_SUG": "Add xmlns=\"http://www.w3.org/1999/xhtml\" to the html element."
-				}
+				},
+				"references": ["https://www.w3.org/TR/xhtml1/#strict"]
 			},
 			"HTM_050": {
 				"message": "Found epub:type=\"pagebreak\" attribute in content document.",
@@ -495,11 +504,13 @@
 			},
 			"HTM_051": {
 				"message": "Found Microdata semantic enrichments but no RDFa. EDUPUB recommends using RDFa Lite.",
-				"severity": "warning"
+				"severity": "warning",
+				"references": ["http://idpf.org/epub/profiles/edu/spec/#h.oaj708i7lspg"]
 			},
 			"HTM_052": {
 				"message": "The property \"region-based\" is only allowed on nav elements in Data Navigation Documents.",
-				"severity": "error"
+				"severity": "error",
+				"references": ["http://idpf.org/epub/renditions/region-nav/#sec-3.4"]
 			},
 			"HTM_053": {
 				"message": "Found an external file link (file://) in file: \"%1$s\".",
