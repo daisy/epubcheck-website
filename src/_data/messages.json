@@ -532,23 +532,32 @@
 		"messages": {
 			"MED_001": {
 				"message": "Video poster must have core media image type.",
-				"severity": "error"
+				"severity": "error",
+				"references": ["https://www.w3.org/publishing/epub32/epub-spec.html#cmt-grp-image"],
+				"explanation": "EPUB specifications require all reading solutions to support certain image formats. A file in this format must be used as a poster frame for videos."
 			},
 			"MED_002": {
 				"message": "%1$s element doesn’t provide fallback.",
-				"severity": "error"
+				"severity": "error",
+				"references": ["https://www.w3.org/publishing/epub32/epub-packages.html#sec-foreign-restrictions-manifest"],
+				"explanation": "All resources that are not in the formats listed among the Core Media Types must have a fallback in a Core Media Types format, in order to allow content to be enjoyed in all reading solutions (even those with a minimum media type support)."
 			},
 			"MED_003": {
 				"message": "A manifest fallback must be provided for image resource \"%1$s\" of type \"%2$s\".",
-				"severity": "error"
+				"severity": "error",
+				"references": ["https://www.w3.org/publishing/epub32/epub-packages.html#sec-foreign-restrictions-manifest", "https://www.w3.org/publishing/epub32/epub-spec.html#cmt-grp-image"],
+				"explanation": "The image is not in a Core Media Types format, so a fallback image in a Core Media Types format is required."
 			},
 			"MED_004": {
 				"message": "Image file header may be corrupted.",
-				"severity": "error"
+				"severity": "error",
+				"explanation": "The file looks corrupted, try opening it with an image viewer and replace it if necessary."
 			},
 			"MED_005": {
 				"message": "Media Overlay audio reference %1$s to non-standard audio type %2$s found.",
-				"severity": "error"
+				"severity": "error",
+				"references": ["https://www.w3.org/publishing/epub32/epub-mediaoverlays.html#sec-overlays-introduction#elemdef-smil-audio"],
+				"explanation": "Media Overlay resources can only be in one of the audio formats provided in the Core Media Types."
 			},
 			"MED_006": {
 				"message": "Some browsers do not support rendering SVG images which use a filename in the xlink:href property.",
