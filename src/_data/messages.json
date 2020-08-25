@@ -574,7 +574,9 @@
 		"messages": {
 			"NAV_001": {
 				"message": "The nav file is not supported for EPUB v2.",
-				"severity": "error"
+				"severity": "error",
+				"references": ["http://idpf.org/epub/20/spec/OPF_2.0.1_draft.htm#Section2.4.1"],
+				"explanation": "The EPUB 2 format does not support the nav file; to define the Content Table and PageList use the NCX file, for landmarks use the <guide> element in the OPF file."
 			},
 			"NAV_002": {
 				"message": "Found epub:type=\"page-list\" in nav document",
@@ -582,7 +584,8 @@
 			},
 			"NAV_003": {
 				"message": "The Navigation Document must have a page list when content document(s) contain page breaks (epub:type=\"pagebreak\").",
-				"severity": "error"
+				"severity": "error",
+				"explanation": "Page breaks identify the points at which the paper pages of the document are interrupted. For this reason, if they are present, it is necessary to indicate the page number in the nav page list element."
 			},
 			"NAV_004": {
 				"message": "The Navigation Document should contain the full document heading hierarchy in EDUPUB.",
@@ -610,7 +613,9 @@
 			},
 			"NAV_010": {
 				"message": "\"%1$s\" nav must not link to remote resources; found link to \"%2$s\".",
-				"severity": "error"
+				"severity": "error",
+				"references": ["https://www.w3.org/publishing/epub32/epub-packages.html#confreq-nav-a-href"],
+				"explanation": ""
 			},
 			"NAV_011": {
 				"message": "\"%1$s\" nav must be in reading order; link target \"%2$s\" is before the previous link’s target in %3$s order.",
@@ -618,7 +623,8 @@
 				"suggestions": {
 					"NAV_011_SUG.spine": "spine",
 					"NAV_011_SUG.document": "document"
-				}
+				},
+				"references": ["https://www.w3.org/publishing/epub32/epub-packages.html#sec-nav-toc", "https://www.w3.org/publishing/epub32/epub-packages.html#sec-nav-pagelist"]
 			}
 		}
 	},
