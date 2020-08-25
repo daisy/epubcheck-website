@@ -633,11 +633,14 @@
 		"messages": {
 			"NCX_001": {
 				"message": "NCX identifier (\"%1$s\") does not match OPF identifier (\"%2$s\").",
-				"severity": "error"
+				"severity": "error",
+				"explanation": "Both fields should have the same value, i.e. the unique identifier of the publication."
 			},
 			"NCX_002": {
 				"message": "toc attribute was not found on the spine element.",
-				"severity": "error"
+				"severity": "error",
+				"references": ["http://idpf.org/epub/20/spec/OPF_2.0.1_draft.htm#Section2.4.1.2"],
+				"explanation": "In the OPF file, the id of the TOC element (i.e. NCX file) must be present as the value of the attribute \"toc\" of the element \"spine\"."
 			},
 			"NCX_003": {
 				"message": "An .NCX file is required for TOC navigation on EPUB v2 readers.",
