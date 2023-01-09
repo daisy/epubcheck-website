@@ -15,7 +15,7 @@
     "author": "",
     "license": "ISC",
     "dependencies": {
-        "@11ty/eleventy": "^0.10.0",
+        "@11ty/eleventy": "^1.0.2",
         "@11ty/eleventy-cache-assets": "^2.0.2",
         "axios": "^0.19.2",
         "cross-env": "^7.0.0",
